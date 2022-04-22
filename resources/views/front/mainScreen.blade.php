@@ -33,7 +33,7 @@
 
                 <div class="row">
                     <div class="col-2 text-center mb-15">
-                        <a href="product-list.html">
+                        <a href="{{route('task')}}">
                             <div class="provide-item s1-bg">
                                 <img src="{{asset('assets/front/images/s2.png')}}" class="cat imgMainscreen" alt="">
                                 <h4 class="b-text">Travail à faire</h4>
@@ -53,7 +53,7 @@
 
                 <div class="row">
                         <div class="col-2 text-center mb-15">
-                            <a href="{{route('task')}}">
+                            <a href="{{route('menuds')}}">
                                 <div class="provide-item s3-bg">
                                     <img src="{{asset('assets/front/images/burger.png')}}" class="cat imgMainscreen" alt="">
                                     <h4 class="b-text">Menu de la semaine</h4>

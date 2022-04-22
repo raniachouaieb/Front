@@ -133,7 +133,7 @@ class ParentController extends Controller
                 "prenomEleve"=>$request->prenomEleve,
 
             ]);
-            return redirect()->route('inscri.index')->with(['success'=>'modification avec succés']);
+            return redirect()->route('mainScreen')->with(['success'=>'modification avec succés']);
 
         }
 }

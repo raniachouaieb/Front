@@ -145,8 +145,8 @@
                                             @csrf
 
                                             <div>
-                                                <input type="email" name="email" class="form-element" placeholder="email" value="{{$enf->nomEleve }}">
-                                                <input type="email" name="email" class="form-element" placeholder="email" value="{{$enf->prenomEleve }}">
+                                                <input type="text" name="nomEleve" class="form-element" placeholder="" value="{{$enf->nomEleve }}">
+                                                <input type="text" name="prenomEleve" class="form-element" placeholder="" value="{{$enf->prenomEleve }}">
 
                                             </div>
                                             <div class="form-row">
@@ -176,10 +176,10 @@
 </div>
 
 <!-- JQuery library file. requared all pages -->
-<script src="{{asset('assets/frontjs/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('assets/front/js/jquery-3.2.1.min.js')}}"></script>
 
 <!-- Template global script file. requared all pages -->
-<script src="{{asset('assets/frontjs/global.script.js')}}"></script>
+<script src="{{asset('assets/front/js/global.script.js')}}"></script>
 
 
 </body>

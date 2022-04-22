@@ -30,7 +30,9 @@ Route::group(['namespace'=>'Front'],function(){
     Route::post('updateElev/{id}', 'ParentController@updateElev')->name('updateElev');
 
     Route::get('task', 'TravailController@task')->name('task');
+    Route::get('listTask/{id}', 'TravailController@listTask')->name('listTask');
     Route::post('logout', 'ParentController@logout')->name('logoute');
+    Route::get('menuds', 'MenuController@list')->name('menuds');
 
 
 
