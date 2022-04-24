@@ -30,7 +30,7 @@ class ParentController extends Controller
 
         Auth::guard('parente')->logout();
         Session::flash('statuscode', 'success');
-        return redirect()->route('Home')->with('status', 'Logout successfully');
+        return redirect()->route('getLogin')->with('status', 'Logout successfully');
     }
 
 

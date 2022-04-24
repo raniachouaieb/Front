@@ -45,15 +45,20 @@
                     <ul class="courses-list list-unstyled mb-0">
 
                         <li>
+
                             <a href="#" class="d-flex align-items-center">
                                 <div class="d-flex align-items-center course-item">
                                     <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
+                                    @foreach($datas as $trav)
+
                                     <div class="ml-10 wd-100">
-                                        <h4 class="courses-name">gg</h4>
+                                        <h4 class="courses-name">{{$trav->titre_travail}}</h4>
                                         <div class="progress">
                                             <div class="progress-bar gradient-orange wd-80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="78"></div>
                                         </div>
                                     </div>
+                                    @endforeach
+
                                 </div>
                                 <div>
                                     <small class="d-block c-price">$24</small>
@@ -66,8 +71,11 @@
                                     </small>
                                 </div>
                             </a>
+
                         </li>
+
                     </ul>
+
                 </div>
             </section>
 

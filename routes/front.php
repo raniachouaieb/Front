@@ -15,6 +15,11 @@ Route::group(['namespace'=>'Front'],function(){
 
     Route::get('getRegister','RegisterController@getRegister')->name('getRegister');
     Route::post('inscrire', 'RegisterController@register')->name('inscrire');
+    Route::get('forgotPass', 'ForgotPassController@forgotPass')->name('forgotPass');
+    Route::post('sendResetLinkEmail', 'ForgotPassController@sendResetLinkEmail')->name('sendResetLinkEmail');
+    Route::get('resetPass/{token}', 'ForgotPassController@resetPass')->name('resetPass');
+    Route::post('resetPass', 'ForgotPassController@submitResetPasswordForm')->name('submitResetPasswordForm');
+
 
 });
 Route::group(['namespace'=>'Front'],function(){
@@ -33,6 +38,9 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('listTask/{id}', 'TravailController@listTask')->name('listTask');
     Route::post('logout', 'ParentController@logout')->name('logoute');
     Route::get('menuds', 'MenuController@list')->name('menuds');
+    Route::get('suggestion', 'SuggestionController@suggestion')->name('suggestion');
+    Route::post('createSuggestion', 'SuggestionController@createSuggestion')->name('createSuggestion');
+
 
 
 

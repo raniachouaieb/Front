@@ -25,16 +25,22 @@ class LoginController extends Controller
 
             if(Auth::guard('parente')->user()->email_verified_at != Null && Auth::guard('parente')->user()->is_active==1){
                 Session::flash('statuscode', 'success');
-                return redirect()->route('mainScreen')->with('success', 'Your email is verified successfully! you can now');
+                return redirect()->route('mainScreen')->with('status', 'Bienvenue! ');
             }
             else{
                 Session::flash('statuscode', 'error');
-                return view('front.login')->with('status', ' Your email is verified successfully');
+                return view('front.login')->with('status', ' not yet verified');
             }
         }
 
         Session::flash('statuscode', 'error');
-
         return redirect()->route('getLogin')->with('status', ' Invalid email or password, Please verify');
+    }
+
+    public function forgotPass(){
+        return view('front.forgotPassword');
+    }
+    public function resetPass(){
+
     }
 }

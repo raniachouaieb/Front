@@ -75,9 +75,14 @@ return [
             'root' => base_path().'/public/assets/uploads/enfants/',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
-
-
         ],
+        'menuds'=>[
+            'driver' => 'local',
+            'root' => base_path().'/public/assets/uploads/menuds/',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
 
         's3' => [
             'driver' => 's3',

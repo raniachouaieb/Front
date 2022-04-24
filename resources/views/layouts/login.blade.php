@@ -9,6 +9,7 @@
 
     <!-- Google font file. If you want you can change. -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Fontawesome font file css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/font-awesome.min.css')}}">
@@ -38,6 +39,8 @@
         <div class="circle3"></div>
     </div>
 </div>
+
+
 
 <!-- JQuery library file. requared all pages -->
 <script src="{{asset('assets/front/js/jquery-3.2.1.min.js')}}"></script>

@@ -9,6 +9,7 @@
 
     <!-- Google font file. If you want you can change. -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Fontawesome font file css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/font-awesome.min.css')}}">
@@ -89,7 +90,7 @@
     .food_detail
     {
         font-size: 10px;
-        color: rgba(38, 29, 86, 0.4);
+        color: rgba(55, 29, 96, 1.2);
         margin-bottom: 15px;
     }
 
@@ -155,7 +156,7 @@
 
         <div>
             <div class="section-head">
-                <h4 class="title-main" style="margin-top: 25px">Menu de la semaine</h4>
+                <h4 class="title-main" style="margin-top: 25px; margin-left: 135px;">Menu de la semaine</h4>
             </div>
             @foreach($menu as $menuds)
             <section id="fda_product_tile" class="col-md-12">

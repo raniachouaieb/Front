@@ -34,8 +34,9 @@
 
                 <div class="form-divider"></div>
 
-                <form method="post" action="{{route('sendResetLinkEmail')}}">
+                <form action="{{route('submitResetPasswordForm')}}" method="POST">
                     @csrf
+                    <input type="hidden" name="token" value="{{ $token }}">
                     <div class="form-row-group with-icons">
                         <div class="form-row no-padding">
                             <i class="fa fa-envelope"></i>
@@ -47,15 +48,33 @@
                             @enderror
                         </div>
                     </div>
-
+                    <div class="form-row-group with-icons">
+                        <div class="form-row no-padding">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="password" class="form-element" name="password" placeholder="Password" required autofocus>
+                            @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-row-group with-icons">
+                        <div class="form-row no-padding">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="password" class="form-element" name="password" placeholder="Confirm Password" required autofocus>
+                            @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
+                        </div>
+                    </div>
                     <div class="form-row">
-                        <button  class="get-started-btn">Send me password</button>
+                        <button type="submit" class="button circle block orange">
+                            Reset Password
+                        </button>
                     </div>
 
+
                 </form>
-                <div class="form-row txt-center w-text">
-                    Back to <a href="{{route('getLogin')}}">Login</a>
-                </div>
+
 
             </div>
         </main>
@@ -79,19 +98,7 @@
 <!-- Template global script file. requared all pages -->
 <script src="{{asset('assets/front/js/global.script.js')}}"></script>
 
-<script src="{{ asset('js/sweetalert.js')}}"></script>
-<script>
-    @if(Session('status'))
-    // alert('{{ session('status') }}');
-    swal({
-        title: '{{ session('status') }}',
-        //text: "You clicked the button!",
-        icon: '{{ session('statuscode') }}',
-        button: "Done!",
-    });
-    @endif
 
-</script>
 </body>
 
 

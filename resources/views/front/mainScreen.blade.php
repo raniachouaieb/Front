@@ -81,7 +81,7 @@
                             </a>
                         </div>
                         <div class="col-2 text-center">
-                            <a href="product-list.html">
+                            <a href="{{route('suggestion')}}">
                                 <div class="provide-item s4-bg">
                                     <img src="{{asset('assets/front/images/comment.png')}}" class="cat imgMainscreen" alt="">
                                     <h4 class="b-text">Observation</h4>
@@ -96,4 +96,17 @@
         </main>
         <!-- Page content end -->
     </div>
+    <script src="{{ asset('js/sweetalert.js')}}"></script>
+    <script>
+        @if(Session('status'))
+        // alert('{{ session('status') }}');
+        swal({
+            title: '{{ session('status') }}',
+            //text: "You clicked the button!",
+            icon: '{{ session('statuscode') }}',
+            button: "Done!",
+        });
+        @endif
+
+    </script>
 @stop

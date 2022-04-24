@@ -96,7 +96,7 @@ body{
 	background-color: #FFF;
 	font-family: Nunito, sans-serif;
 	font-size: 14px;
-	color: #4f4f67;
+	color: orangered;
 	line-height: 1.4;
 	font-weight: 400;
 	box-sizing: border-box;
@@ -332,6 +332,7 @@ nav.menu ul.main-menu>li li a{
 .s4-bg{background: #dad5fe}
 .s5-bg{background: #f7f7ff !important}
 .creamy-bg{
+    /*background: url(../images/bg2.jpg) center no-repeat;*/
 	background: linear-gradient(to left, #100DD1, #083afb)
 }
 .provide-item{
@@ -2988,3 +2989,4 @@ footer ul li a i,
 .profileDisplay{
     border-radius: 50%;
 }
+

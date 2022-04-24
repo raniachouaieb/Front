@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginRequest extends FormRequest
+class SuggestionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email|regex:/(.+)@(.+)\.(.+)/i',
-            'password'=>'required|min:8',
+            'sujet' => 'required',
+            'detail'=>'required',
 
 
         ];
@@ -34,12 +34,8 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.email' => 'Please,Enter a valid address email',
-            'email.regex' => 'Please,Enter a valid address email',
-
-            'email.required' => 'email cannot be empty.',
-            'password.required' => 'pass cannot be empty.',
-            'password.min'=> 'password should be at least 8 character'
+            'sujet.required' => 'Ce champ ne peut pas etre vide.',
+            'detail.required' => 'Ce champ ne peut pas etre vide.',
         ];
     }
 }

@@ -39,8 +39,15 @@
             </li>
 
             <li>
+                <a  href="{{ route('logoute') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <img src="{{asset('assets/front/images/logout.png')}}" alt="">{{ __('Logout') }}
+                </a>
 
-                <a href=""><img src="{{asset('assets/front/images/logout.png')}}" alt=""> Logout</a>
+                <form id="logout-form" action="{{ route('logoute') }}" method="post" class="d-none">
+                    @csrf
+                </form>
 
             </li>
            <!-- <li>
