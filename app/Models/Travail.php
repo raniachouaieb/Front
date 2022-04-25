@@ -41,4 +41,8 @@ class Travail extends Model
         return $this->belongsTo('App\Models\Student', 'student_id','id');
         //return $this->belongsTo(Student::class, 'student_id', 'id');
     }
+
+    public function matieres(){
+        return $this->hasMany('App\Models\Matiere','matiere_id', 'id');
+    }
 }

@@ -42,6 +42,9 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('suggestion', 'SuggestionController@suggestion')->name('suggestion');
     Route::post('createSuggestion', 'SuggestionController@createSuggestion')->name('createSuggestion');
 
+    Route::get('noteInfo', 'InfoController@info')->name('noteInfo');
+    Route::get('listInfo/{id}', 'InfoController@listInfo')->name('listInfo');
+
 
 
 

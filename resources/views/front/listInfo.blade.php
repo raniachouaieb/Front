@@ -23,36 +23,34 @@
 
 <body>
 
-            @include('includes.sidebar')
-            <div class="wrapper-inline">
-                <!-- Header area start -->
-                <header> <!-- extra class no-background -->
-                    <a class="go-back-link" href="{{route('mainScreen')}}"><i class="fa fa-arrow-left"></i></a>
-                    <h1 class="page-title">Devoirs</h1>
-                    <div class="navi-menu-button">
-                        <em></em>
-                        <em></em>
-                        <em></em>
-                    </div>
-                </header>
+@include('includes.sidebar')
+<div class="wrapper-inline">
+    <!-- Header area start -->
+    <header> <!-- extra class no-background -->
+        <a class="go-back-link" href="{{route('mainScreen')}}"><i class="fa fa-arrow-left"></i></a>
+        <h1 class="page-title">Devoirs</h1>
+        <div class="navi-menu-button">
+            <em></em>
+            <em></em>
+            <em></em>
+        </div>
+    </header>
 
-                <div>
-                    <div class="section-head">
-                        <h4 class="title-main" style=" margin-top: 25px;margin-left: 155px;">Liste des devoirs</h4>
+    <div>
+        <div class="section-head">
+            <h4 class="title-main" style=" margin-top: 25px;margin-left: 155px;">Liste des devoirs</h4>
 
-                    </div>
+        </div>
 
 
-            <div class="clear"></div>
+        <div class="clear"></div>
 
-            <section class="container">
+        <section class="container">
 
-                <div>
+            <div>
 
-                    <ul class="courses-list list-unstyled mb-0">
-                        @if($travails && $travails->count()>0)
+                <ul class="courses-list list-unstyled mb-0">
 
-                            @foreach($travails as $travail)
                             <li>
 
                                 <div class="d-flex align-items-center">
@@ -61,35 +59,30 @@
 
                                         <div class="row">
                                             <label>Sujet : </label>
-                                            <h4 class="courses-name" style="margin-left: 3%">{{$travail->titre_travail}}</h4>
+                                            <h4 class="courses-name" style="margin-left: 3%">kjhgf</h4>
                                             <div class="row">
                                                 <label>Détail: </label>
-                                                {{$travail->detail_travail}}
+                                                fgh
                                             </div>
                                         </div>
-                                        <div class="">
 
-                                            <span class="badge badge-success" style="position: absolute;margin-top: -45px;margin-left: 51px;">{{$travail->date_depot}}</span>
-                                        </div>
                                         <label>Demandee le : </label>
-                                        {{$travail->date_limite}}
+
 
                                     </div>
 
                                 </div>
 
                             </li>
-                            @endforeach
-                        @endif
 
-                    </ul>
+                </ul>
 
-
-                </div>
-            </section>
 
             </div>
-            </div>
+        </section>
+
+    </div>
+</div>
 
 </body>
 </html>

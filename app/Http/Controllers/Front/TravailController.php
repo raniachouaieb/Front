@@ -37,6 +37,7 @@ class TravailController extends Controller
     public function listTask($id){
 
         $travails=Travail::where('class_id',$id)->get();
+        //$nomMatiere= Travail::with('matieres')->get();
         return view('front.listTask',compact('travails'));
     }
 }

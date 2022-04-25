@@ -260,7 +260,7 @@ nav.menu ul.main-menu>li li a{
 	width: 100%;
 	bottom: 0;
 	top: 0;
-	background-color: #fff;
+	background: url("../images/bg.jpg");
 	overflow: auto;
 }
 .wrapper.with-bg-image .wrapper-inline{
@@ -837,7 +837,7 @@ select.form-element{
 *------------------------------------------------------------------*/
 .splash-screen{
 	position: relative;
-	background: url("../images/splash-screen.png") no-repeat center;
+	background: url("../images/started2.jpg") no-repeat center;
 	background-size: cover;
 	height: 100vh;
 	width: 100%;
@@ -2981,8 +2981,9 @@ footer ul li a i,
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    /*margin-right: -15px;
-    margin-left: -15px;*/
+    /*margin-right: -15px;*/
+    margin-left: -1px;
+    position: relative;
 }
 .container .row .col-2:first-child{
     margin-right: 4%;

@@ -22,7 +22,7 @@ class Student extends Model
         return $this->belongsTo(Parente::class,'parent_id', 'id');
     }
     public function class(){
-        return $this->hasOne(Classroom::class, 'class_id', 'id');
+        return $this->hasOne('App\Models\Classroom', 'class_id', 'id');
     }
 
     public function travails(){

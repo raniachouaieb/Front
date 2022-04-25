@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="col-2 text-center mb-15">
-                        <a href="product-list.html">
+                        <a href="{{route('noteInfo')}}">
                             <div class="provide-item s2-bg">
                                 <img src="{{asset('assets/front/images/s1.png')}}" class="cat imgMainscreen" alt="">
                                 <h4 class="b-text">Note d'info</h4>
