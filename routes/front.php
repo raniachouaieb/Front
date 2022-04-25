@@ -15,6 +15,7 @@ Route::group(['namespace'=>'Front'],function(){
 
     Route::get('getRegister','RegisterController@getRegister')->name('getRegister');
     Route::post('inscrire', 'RegisterController@register')->name('inscrire');
+
     Route::get('forgotPass', 'ForgotPassController@forgotPass')->name('forgotPass');
     Route::post('sendResetLinkEmail', 'ForgotPassController@sendResetLinkEmail')->name('sendResetLinkEmail');
     Route::get('resetPass/{token}', 'ForgotPassController@resetPass')->name('resetPass');

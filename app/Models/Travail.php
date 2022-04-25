@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Classroom;
+use App\Models\Student;
 
 class Travail extends Model
 {
@@ -22,6 +23,7 @@ class Travail extends Model
         'date_limite',
         'matiere_id',
         'class_id',
+        'student_id',
         'file',
         'extension',
 
@@ -33,5 +35,10 @@ class Travail extends Model
 
     public function class(){
         return $this->belongsTo(Classroom::class, 'class_id', 'id');
+    }
+
+    public function student(){
+        return $this->belongsTo('App\Models\Student', 'student_id','id');
+        //return $this->belongsTo(Student::class, 'student_id', 'id');
     }
 }

@@ -67,7 +67,7 @@ body *{
 input,button, select, textarea, label{
 	font-family: Nunito;
 	font-size: 14px;
-	color: #929292;
+	color: #000000;
 	line-height: 1.4;
 	font-weight: 600;
 }
@@ -96,7 +96,7 @@ body{
 	background-color: #FFF;
 	font-family: Nunito, sans-serif;
 	font-size: 14px;
-	color: orangered;
+	color: gray;
 	line-height: 1.4;
 	font-weight: 400;
 	box-sizing: border-box;
@@ -377,7 +377,7 @@ margin-top: 0
     border-radius: 15px;
 }
 .inst-card.v2{
-	background: #f7f7ff;
+	background: gainsboro;
 	margin-bottom: 15px;
     margin-right: 10px;
     margin-left: 10px;
@@ -396,16 +396,17 @@ margin-top: 0
 	max-width: 120px
 }
 .inst-info{
-	padding-left: 140px
+	padding-left: 112px
 }
 .inst-info .instname{
 	margin-top: 0;
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 17px;
     color: #fff;
 }
 .inst-card.v2 .inst-info .instname{
-	color: #13287e
+	color: #13287e;
+    margin-left: -17px;
 }
 .inst-info p{
 	font-size: 16px;

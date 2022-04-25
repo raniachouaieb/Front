@@ -37,29 +37,43 @@
 
         <div>
             <div class="section-head">
-                <h4 class="title-main" style=" margin-top: 25px;margin-left: 155px;">Liste des travail</h4>
+                <h4 class="title-main" style=" margin-top: 25px;margin-left: 155px;">Mes enfants</h4>
+                <hr />
             </div>
-            <input type="hidden" value="{{$id=0}}">
+
+            @if($eleves && $eleves->count()>0)
+
+
         @foreach($eleves as $enf)
-                <input type="hidden" value="{{$id++}}">
-        <a href="{{route('listTask', $enf->id)}}">
-            <div class="inst-card v2">
-                <div class="inst-item">
-                    <div class="inst-img-wrapper v2">
-                        <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="100" height="100" style="border-radius: 35%">
+            <div class="touch" onclick="window.location.href='{{route('listTask', $enf->class_id)}}';">
+                <div class="inst-card v2">
+                    <div class="inst-item">
+                        <div class="inst-img-wrapper v2">
+                            <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="80" height="80" style="border-radius: 50%;margin-top: 25px;">
+                        </div>
+                        <div class="inst-info">
+                            <h4 class="instname">{{$enf->nomEleve}} {{$enf->prenomEleve}}</h4>
+                            <div class="row">
+                                <label>Niveau : </label>
+                                 <h6>@foreach($niveaux as $niv)@if($enf->niveau == $niv->id ){{$niv->level}} @endif @endforeach </h6>
+                            </div>
+                            <div class="row">
+                                <label>Classe : </label>
+                            <h6>@foreach($classes as $class)@if($enf->class_id == $class->id ){{$class->name}} @endif @endforeach </h6>
+                            </div>
+                            <label style="margin-left: -18px">Travail à faire réçus : </label>
+                            <span class=" badge badge-success" style="width: 10%">
+                                {{$enf->travails()->count()}}
+                            </span>
+                        </div>
                     </div>
-                    <div class="inst-info">
-                        <h3 class="instname">{{$enf->nomEleve}} {{$enf->prenomEleve}}</h3>
-                        <p>@foreach($niveaux as $niv)@if($enf->niveau == $niv->id ){{$niv->level}} @endif @endforeach </p>
-                        <p>@foreach($classes as $class)@if($enf->class_id == $class->id ){{$class->name}} @endif @endforeach </p>
-                              <label>Travail à faire réçus : </label>
-                             <span class="badge badge-success" style="width: 55px;padding: 8px">{{$id}}</span>
-                                           </div>
                 </div>
             </div>
-        </a>
-        @endforeach
+<!--        <a href="{{route('listTask', $enf->id)}}">-->
 
+<!--        </a>-->
+        @endforeach
+            @endif
 
 
 

@@ -25,7 +25,7 @@
             <div class="wrapper-inline">
                 <!-- Header area start -->
                 <header> <!-- extra class no-background -->
-                    <a class="go-back-link" href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
+                    <a class="go-back-link" href="{{route('mainScreen')}}"><i class="fa fa-arrow-left"></i></a>
                     <h1 class="page-title">Travail à faire</h1>
                     <div class="navi-menu-button">
                         <em></em>
@@ -43,36 +43,33 @@
 
                 <div>
                     <ul class="courses-list list-unstyled mb-0">
+                        @if($travails && $travails->count()>0)
 
-                        <li>
+                            @foreach($travails as $travail)
+                            <li>
 
-                            <a href="#" class="d-flex align-items-center">
-                                <div class="d-flex align-items-center course-item">
-                                    <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
-                                    @foreach($datas as $trav)
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center course-item">
+                                        <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
 
-                                    <div class="ml-10 wd-100">
-                                        <h4 class="courses-name">{{$trav->titre_travail}}</h4>
-                                        <div class="progress">
-                                            <div class="progress-bar gradient-orange wd-80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="78"></div>
+                                        <div class="row">
+                                            <label>Sujet : </label>
+                                            <h4 class="courses-name" style="margin-left: 1%">{{$travail->titre_travail}}</h4>
+                                            <div class="">
+                                                <p>{{$travail->detail_travail}}</p>
+
+                                            </div>
                                         </div>
+
+
+
                                     </div>
-                                    @endforeach
 
                                 </div>
-                                <div>
-                                    <small class="d-block c-price">$24</small>
-                                    <small class="txt-orange d-block">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </small>
-                                </div>
-                            </a>
 
-                        </li>
+                            </li>
+                            @endforeach
+                        @endif
 
                     </ul>
 

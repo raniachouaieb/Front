@@ -10,5 +10,18 @@
         </div>
 
     </main>
+    <script src="{{ asset('js/sweetalert.js')}}"></script>
+    <script>
+        @if(Session('status'))
+        // alert('{{ session('status') }}');
+        swal({
+            title: '{{ session('status') }}',
+            //text: "You clicked the button!",
+            icon: '{{ session('statuscode') }}',
+            button: "Done!",
+        });
+        @endif
+
+    </script>
 
 @endsection

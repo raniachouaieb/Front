@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Parente;
 use App\Models\Classroom;
+use App\Models\Travail;
 
 class Student extends Model
 {
@@ -22,6 +23,11 @@ class Student extends Model
     }
     public function class(){
         return $this->hasOne(Classroom::class, 'class_id', 'id');
+    }
+
+    public function travails(){
+        return $this->hasMany('App\Models\Travail','student_id','id');
+        //return $this->hasMany(Travail::class, 'student_id','id');
     }
 
 

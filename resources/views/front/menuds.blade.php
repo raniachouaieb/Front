@@ -145,7 +145,7 @@
     <div class="wrapper-inline">
         <!-- Header area start -->
         <header> <!-- extra class no-background -->
-            <a class="go-back-link" href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
+            <a class="go-back-link" href="{{route('mainScreen')}}"><i class="fa fa-arrow-left"></i></a>
             <h1 class="page-title">Menu </h1>
             <div class="navi-menu-button">
                 <em></em>
@@ -163,7 +163,7 @@
                 <div class="row fda_food_row">
                     <div class="col-md-9">
                         <div class="food_tile active">
-                            <img src="https://i.postimg.cc/9Rnwcz9r/tsr.png" alt="" class="fda_product_img">
+                            <img src="http://127.0.0.1:8100/assets/{{$menuds->image}}" alt="" class="fda_product_img">
                             <span class="food_name"> {{$menuds->jour}} {{$menuds->date}}</span>
                             <span class="food_detail">{!! $menuds->menu !!}</span>
                         </div>

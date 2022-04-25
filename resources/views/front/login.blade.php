@@ -16,7 +16,7 @@
                     <i class="fa fa-user"></i>
                     <input type="email" name="email" class="form-element" placeholder="Username or Email">
                     @error('email')
-                    <span class="invalid-feedback" role="alert">
+                    <span class="invalid-feedback" role="alert" style="color: crimson">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -26,7 +26,7 @@
                     <i class="fa fa-lock"></i>
                     <input type="password" name="password" class="form-element" placeholder="Password">
                     @error('password')
-                    <span class="invalid-feedback" role="alert">
+                    <span class="invalid-feedback " role="alert" style="color: crimson">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -34,7 +34,7 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="get-started-btn" style="width: 19rem;margin-left: 1rem;">Login</button>
+                <button type="submit" class="button circle block orange" >Login</button>
             </div>
 
 

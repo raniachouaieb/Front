@@ -22,24 +22,21 @@ class TravailController extends Controller
     {
         $this->middleware(['auth:parente','verified']);
     }
+
     public function task()
     {
-        $datas=[];
-             $niveaux = Level::get();
-             $classes = Classroom::get();
-            $eleves = Student::where([['parent_id', Auth::guard('parente')->user()->id],['class_id' ,'!=',null]])->get();
-        foreach ($eleves as $el) {
-            $data = Travail::where('class_id', $el->class_id)->count();
-            //dd($data);
-            array_push($datas,$data);
-        }
-            return view('front.taskToDo', compact('eleves', 'niveaux', 'classes','datas'));
+        $nbTravail="";
+        $niveaux = Level::get();
+        $classes = Classroom::get();
+        $eleves = Student::where([['parent_id', Auth::guard('parente')->user()->id],['class_id' ,'!=',null]])->get();
+        $nbTravail= Student::with('travails')->get();
+        //dd($nbTravail);
+        return view('front.taskToDo', compact('eleves', 'niveaux', 'classes','nbTravail'));
 
     }
     public function listTask($id){
 
-        $datas=Travail::where('class_id',$id)->orderBy('id','DESC')
-            ->get();
-        return view('front.listTask',compact('datas'));
+        $travails=Travail::where('class_id',$id)->get();
+        return view('front.listTask',compact('travails'));
     }
 }
