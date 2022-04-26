@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="col-2 text-center mb-15">
-                            <a href="product-list.html">
+                            <a href="{{route('convocation')}}">
                                 <div class="provide-item s4-bg">
                                     <img src="{{asset('assets/front/images/newsletter.png')}}" class="cat imgMainscreen" alt="">
                                     <h4 class="b-text">Convocations</h4>

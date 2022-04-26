@@ -26,7 +26,7 @@
     <div class="wrapper-inline">
         <!-- Header area start -->
         <header> <!-- extra class no-background -->
-            <a class="go-back-link" href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
+            <a class="go-back-link" href="{{route('mainScreen')}}"><i class="fa fa-arrow-left"></i></a>
             <h1 class="page-title">Note Info</h1>
             <div class="navi-menu-button">
                 <em></em>
@@ -37,7 +37,7 @@
 
         <div>
             <div class="section-head">
-                <h4 class="title-main" style=" margin-top: 25px;margin-left: 155px;">Mes enfants</h4>
+                <h4 class="title-main">Mes enfants</h4>
 
             </div>
 

@@ -45,6 +45,9 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('noteInfo', 'InfoController@info')->name('noteInfo');
     Route::get('listInfo/{id}', 'InfoController@listInfo')->name('listInfo');
 
+    Route::get('convocation', 'ConvocationController@convocation')->name('convocation');
+    Route::get('listConvocation/{id}', 'ConvocationController@listConvocation')->name('listConvocation');
+
 
 
 

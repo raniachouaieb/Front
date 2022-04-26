@@ -301,14 +301,16 @@ nav.menu ul.main-menu>li li a{
 .section-head{
 	display: flex;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 98px;
     margin-bottom: 15px
 }
 .section-head .title-main{
-	margin: 0;
-    font-size: 16px;
-    color: #13287e;
-    flex: 8
+	margin: 17;
+    font-size: 18px;
+    color: #019723;
+    flex: 8;
+    margin-top: 25px;
+    margin-left: 155px;"
 }
 .section-head .c-btn{
 	flex: 1

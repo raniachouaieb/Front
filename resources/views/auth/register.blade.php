@@ -184,7 +184,7 @@
                                             </div>
                                         </div>
 
-                                    </div>
+                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-8">

@@ -24,10 +24,16 @@ class Student extends Model
     public function class(){
         return $this->hasOne('App\Models\Classroom', 'class_id', 'id');
     }
+    public function matiere(){
+        return $this->hasMany('App\Models\Matiere');
+    }
 
     public function travails(){
         return $this->hasMany('App\Models\Travail','student_id','id');
         //return $this->hasMany(Travail::class, 'student_id','id');
+    }
+    public function convocations(){
+        return $this->hasMany('App\Models\Convocation' , 'student_id', 'id');
     }
 
 

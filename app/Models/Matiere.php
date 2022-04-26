@@ -35,7 +35,7 @@ class Matiere extends Model
 
 
     public function travail(){
-        return $this->belongsTo('App\Models\Travail', 'matiere_id', 'id');
+        return $this->hasMany('App\Models\Travail', 'matiere_id', 'id');
     }
 
 

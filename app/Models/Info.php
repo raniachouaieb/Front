@@ -28,7 +28,7 @@ class Info extends Model
 
     public function classes()
     {
-        return $this->belongsToMany(\App\Models\Classroom::class);
+        return $this->belongsToMany('App\Models\Classroom');
     }
 
     public function classe()

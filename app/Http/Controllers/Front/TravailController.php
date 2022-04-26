@@ -27,6 +27,8 @@ class TravailController extends Controller
     {
         $nbTravail="";
         $niveaux = Level::get();
+        //$classes = Student::with('class')->get();
+
         $classes = Classroom::get();
         $eleves = Student::where([['parent_id', Auth::guard('parente')->user()->id],['class_id' ,'!=',null]])->get();
         $nbTravail= Student::with('travails')->get();
@@ -37,7 +39,8 @@ class TravailController extends Controller
     public function listTask($id){
 
         $travails=Travail::where('class_id',$id)->get();
-        //$nomMatiere= Travail::with('matieres')->get();
-        return view('front.listTask',compact('travails'));
+        $nomMatiere= Travail::with('matieres')->get();
+
+        return view('front.listTask',compact('travails','nomMatiere'));
     }
 }

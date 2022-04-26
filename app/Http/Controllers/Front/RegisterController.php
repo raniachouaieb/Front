@@ -42,6 +42,7 @@ class RegisterController extends Controller
 
         ]);
         $parent->sendEmailVerificationNotification();
+
         $students = Student::create([
             "nomEleve"=>$request->nomEleve,
             "prenomEleve"=>$request->prenomEleve,

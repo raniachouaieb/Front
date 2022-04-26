@@ -26,6 +26,15 @@ class Classroom extends Model
     public function level(){
         return $this->hasOne(Level::class, 'id_level', 'id');
     }
+    public function infos(){
+        return $this->hasMany('App\Models\Info');
+    }
+
+    public function informations()
+    {
+        return $this->hasMany(\App\Models\Classroom_Info::class,'class_id','id')->orderByDesc('Created_at');
+
+    }
 
 
 

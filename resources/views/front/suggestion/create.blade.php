@@ -42,7 +42,7 @@
 
 
                 <div class="form-divider"></div>
-                <div class="form-label-divider"><span style="color: #385d7a">Proposer une suggestion</span></div>
+                <div class="form-label-divider"><span style="color: #2eb18d;font-size: 18px;">Proposer une suggestion</span></div>
                 <div class="form-divider"></div>
                 <form method="post" action="{{route('createSuggestion')}}">
                     @csrf

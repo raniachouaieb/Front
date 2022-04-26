@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
+use App\Models\Classroom_Info;
 use App\Models\Info;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -19,7 +20,6 @@ class InfoController extends Controller
     public function info()
     {
         $nbTravail="";
-
         $classes = Classroom::get();
         $eleves = Student::where([['parent_id', Auth::guard('parente')->user()->id],['class_id' ,'!=',null]])->get();
         //$nbTravail= Student::with('travails')->get();
@@ -28,9 +28,8 @@ class InfoController extends Controller
 
     }
     public function listInfo($id){
-
-        $infos=Info::where('class_id',$id)->get();
-
+        $infos= Classroom_Info::where('classroom_id',$id)->get();
         return view('front.listInfo',compact('infos'));
     }
+
 }
