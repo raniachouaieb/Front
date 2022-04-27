@@ -11,6 +11,7 @@ class Suggestion extends Model
     protected $fillable=[
         'sujet',
         'detail',
+        'parent_id'
     ];
 
      protected $casts=[

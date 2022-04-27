@@ -25,8 +25,8 @@
     <div class="wrapper-inline">
         <!-- Header area start -->
         <header> <!-- extra class no-background -->
-            <a class="go-back-link" href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
-            <h1 class="page-title">Suggetsion</h1>
+            <a class="go-back-link" href="{{route('mainScreen')}}"><i class="fa fa-arrow-left"></i></a>
+            <h1 class="page-title">Suggestion</h1>
             <div class="navi-menu-button">
                 <em></em>
                 <em></em>
@@ -36,8 +36,10 @@
         <!-- Header area end -->
         <!-- Page content start -->
         <main>
-
-            <div class="container" style="margin-top: 63%;">
+            <div class="text-center">
+                <img src="{{asset('assets/front/images/logo.png')}}" class="logo-img" alt="">
+            </div>
+            <div class="container" style="margin-top: 23%;">
 
 
 
@@ -48,7 +50,8 @@
                     @csrf
                     <div class="form-row-group">
                         <div class="form-row no-padding">
-                            <input type="text" name="sujet" class="form-element " placeholder="sujet">
+                            <div class="contact-item"> sujet :</div>
+                            <input type="text" name="sujet" class="form-element " placeholder="">
                             @error('sujet')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -60,13 +63,9 @@
                     <div class="form-mini-divider"></div>
 
                     <div class="form-row-group">
-                        <div class="form-row no-padding">
-                            <textarea class="form-element" placeholder="détails" name="detail" rows="6"></textarea>
-                            @error('detail')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                        <div class="form-row no-padding ">
+                            <div class="contact-item"> Suggestion :</div>
+                            <textarea name="suggestion" class="form-element" placeholder="Textarea"></textarea>
                         </div>
                     </div>
 

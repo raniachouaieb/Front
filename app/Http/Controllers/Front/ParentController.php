@@ -54,10 +54,12 @@ class ParentController extends Controller
             $user = [
                 'name' => Auth::guard('parente')->user()->nomPere,
                 'info' => 'Laravel & Python Devloper',
-                'msg'=>$request->bakkaya
+                'msg'=>$request->message
             ];
 
             \Mail::to('raniachouaieb82@gmail.com')->send(new \App\Mail\ContactUs($user));
+            Session::flash('statuscode', 'success');
+            return redirect()->route('mainScreen')->with('status', ' Votre message est envoyée avec succées');
 
             dd("success");
 

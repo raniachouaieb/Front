@@ -56,7 +56,7 @@
                     <div class="form-divider"></div>
                     <div class="form-row no-padding ">
                         <div class="contact-item"> Message :</div>
-                        <textarea name="bakkaya" class="form-element" placeholder="Textarea"></textarea>
+                        <textarea name="message" class="form-element" placeholder="Textarea"></textarea>
                     </div>
                 </div>
             </div>

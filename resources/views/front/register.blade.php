@@ -133,48 +133,42 @@
     #progressbar {
         margin-bottom: 30px;
         overflow: hidden;
-        color: lightgrey
+        color: #eee;
     }
 
     #progressbar .active {
-        color: #000000
+        color: #000000;
     }
 
     #progressbar li {
         list-style-type: none;
         font-size: 12px;
-        width: 16%;
+        width: 22%;
         float: left;
         position: relative
     }
 
     #progressbar #account:before {
         font-family: FontAwesome;
-        content: "\f023"
+        content: "\f129"
     }
 
-    #progressbar #personal:before {
-        font-family: FontAwesome;
-        content: "\f007"
-    }
+
 
     #progressbar #payment:before {
         font-family: FontAwesome;
-        content: "\f09d"
+        content: "\f2bb"
     }
     #progressbar #infoEleve:before {
         font-family: FontAwesome;
-        content: "\f09d"
+        content: "\f129"
     }
     #progressbar #condition:before {
         font-family: FontAwesome;
-        content: "\f09d"
-    }
-
-    #progressbar #confirm:before {
-        font-family: FontAwesome;
         content: "\f00c"
     }
+
+
 
     #progressbar li:before {
         width: 50px;
@@ -222,18 +216,18 @@
                     @csrf
 
                     <ul id="progressbar">
-                        <li class="active" id="account"><strong>Information Père</strong></li>
-                        <li id="personal"><strong>Information Mère</strong></li>
+                        <li class="active" id="account"><strong>Information Parent</strong></li>
+
                         <li id="payment"><strong>Contact</strong></li>
                         <li id="infoEleve"><strong>Info eleve</strong></li>
-                        <li id="condition"><strong>Condition</strong></li>
-                        <li id="confirm"><strong>Submit</strong></li>
+                        <li id="condition"><strong>Confirm</strong></li>
 
 
                     </ul> <!-- fieldsets -->
+
                     <fieldset>
-                        <div class="form-row-group with-icons">
-                            <h2 class="fs-title">Information Père</h2>
+                        <div class="">
+                            <h2 class="fs-title">Père</h2>
                             <input type="text" name="nomPere" placeholder="Nom" class="form-control @error('nomPere') is-invalid @enderror" >
                             @error('nomPere')
                             <span class="invalid-feedback" role="alert">
@@ -259,11 +253,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
-                        </div> <input type="button" name="next" class="next action-button" value="Next Step" />
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-card">
-                            <h2 class="fs-title">Information Mère</h2>
+                        </div>
+                        <div class="" >
+                            <h2 class="fs-title"> Mère</h2>
                             <input type="text" name="nomMere" placeholder="Nom" class="form-control @error('nomMere') is-invalid @enderror"/>
                             @error('nomMere')
                             <span class="invalid-feedback" role="alert">
@@ -288,9 +280,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
-                        </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        </div>
+
                         <input type="button" name="next" class="next action-button" value="Next Step" />
                     </fieldset>
+
                     <fieldset>
                         <div class="form-card">
                             <h2 class="fs-title">Contact</h2>
@@ -411,15 +405,17 @@
 
                     <fieldset>
                         <div class="form-card">
-                            <label for="" class="d-block">
-                                <input type="checkbox" id="terms" > Vous devez accepter nos <a href=""> termes et conditions</a>
+                            <div class="row">
+                                <input type="checkbox" id="terms" >
+                                Vous devez accepter nos <a href="" style=" color: #17a2b8"> termes et conditions</a>
 
-                            </label>
+                            </div>
 
                         </div>
+                        <div class="row">
                         <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                         <input type="submit" name="next" class="next action-button button circle block orange" value="Confirm" />
-
+                        </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
