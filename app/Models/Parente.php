@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use App\Notifications\VerifyEmail;
+use App\Notifications\SendMessage;
 use App\Notifications\ResetPasswordNotification;
 use App\Models\Student;
 
@@ -58,6 +59,10 @@ class Parente extends Authenticatable implements MustVerifyEmail
     public function sendEmailVerificationNotification()
     {
         $this->notify(new VerifyEmail); // my notification
+    }
+    public function sendMessageEmailNotification()
+    {
+        $this->notify(new SendMessage); // my notification
     }
 
     /**

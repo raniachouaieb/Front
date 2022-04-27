@@ -27,6 +27,7 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('Home', 'ParentController@index')->name('Home');
     Route::get('mainScreen','ParentController@mainScreen')->name('mainScreen');
     Route::get('contact', 'ParentController@contact')->name('contact');
+    Route::post('sendMessage','ParentController@sendMessage')->name('sendMessage');
     Route::get('apropos', 'ParentController@apropos')->name('apropos');
     Route::get('profile', 'ParentController@profile')->name('profile');
     Route::post('updateImageParent/{id}', 'ParentController@updateImageParent')->name('updateImageParent');
@@ -47,6 +48,8 @@ Route::group(['namespace'=>'Front'],function(){
 
     Route::get('convocation', 'ConvocationController@convocation')->name('convocation');
     Route::get('listConvocation/{id}', 'ConvocationController@listConvocation')->name('listConvocation');
+
+
 
 
 

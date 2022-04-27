@@ -162,7 +162,7 @@
             <section id="fda_product_tile" class="col-md-12">
                 <div class="row fda_food_row">
                     <div class="col-md-9">
-                        <div class="food_tile active" style="width: 177%;padding: 2%;margin-left: -27%;">
+                        <div class="food_tile active" style="width: 221%;padding: 2%;margin-left: -38%;">
                             <img src="http://127.0.0.1:8100/assets/{{$menuds->image}}" alt="" class="fda_product_img">
                             <span class="food_name"> {{$menuds->jour}} {{$menuds->date}}</span>
                             <span class="food_detail">{!! $menuds->menu !!}</span>

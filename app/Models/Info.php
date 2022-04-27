@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Classroom_Info;
+use App\Models\ClassroomInfo;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Classroom;
 
@@ -26,15 +26,15 @@ class Info extends Model
 
 
 
-    public function classes()
+    public function classrooms()
     {
-        return $this->belongsToMany('App\Models\Classroom');
+        return $this->belongsToMany('App\Models\Classroom')->using(ClassroomInfo::class);
     }
 
-    public function classe()
+    /*public function classe()
     {
         return $this->hasMany(Classroom_Info::class,'info_id','id')->orderByDesc('Created_at');
 
-    }
+    }*/
 
 }

@@ -29,9 +29,9 @@
         <section class="container">
             <div>
                 <ul class="courses-list list-unstyled mb-0">
-                    @if($infos && $infos->count()>0)
-
-                    @foreach($infos as $info)
+                    @if($listInfff && $listInfff->count()>0)
+                    {
+                    @foreach($listInfff as $info)
                             <li>
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex align-items-center course-item">

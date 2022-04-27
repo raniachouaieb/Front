@@ -27,14 +27,15 @@ class Classroom extends Model
         return $this->hasOne(Level::class, 'id_level', 'id');
     }
     public function infos(){
-        return $this->hasMany('App\Models\Info');
+        return $this->belongsToMany('App\Models\Info');
     }
 
-    public function informations()
+
+   /* public function informations()
     {
         return $this->hasMany(\App\Models\Classroom_Info::class,'class_id','id')->orderByDesc('Created_at');
 
-    }
+    }*/
 
 
 

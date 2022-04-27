@@ -328,19 +328,20 @@ nav.menu ul.main-menu>li li a{
 .pink-bg{background: #ff505d !important}
 .orange-bg{background: #ffad3d}
 .blue-bg{background: #4886ff}
-.s1-bg{background: #fee2de}
-.s2-bg{background: #feddee}
-.s3-bg{background: #dad5fe}
-.s4-bg{background: #dad5fe}
+.s1-bg{    background: rgba(255,255,255,0.7);}
+.s2-bg{    background: rgba(255,255,255,0.7);}
+.s3-bg{    background: rgba(255,255,255,0.7);}
+.s4-bg{background: rgba(255,255,255,0.7);}
 .s5-bg{background: #f7f7ff !important}
 .creamy-bg{
-    /*background: url(../images/bg2.jpg) center no-repeat;*/
+    /*background: url(../images/splash-screen.jpg) center no-repeat;*/
 	background: linear-gradient(to left, #100DD1, #083afb)
 }
 .provide-item{
 	padding: 20px 10px;
     border-radius: 10px;
     height: 220px;
+    box-shadow: 0px 0px 4px 0px;
 }
 .has-border{
 	border: 2px solid #2eb18d !important
@@ -627,7 +628,7 @@ div.container{
 	border:solid 1px #f2f2f2;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 14px 8px rgb(0 0 0 / 20%)
 }
 .form-row-group .form-row{
 	padding: 0 10px;

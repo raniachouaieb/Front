@@ -14,7 +14,7 @@
             <div class="form-row-group with-icons">
                 <div class="form-row no-padding">
                     <i class="fa fa-user"></i>
-                    <input type="email" name="email" class="form-element" placeholder="Username or Email">
+                    <input type="email" name="email" class="form-element"  value="{{old('email')}}" placeholder="Username or Email">
                     @error('email')
                     <span class="invalid-feedback" role="alert" style="color: crimson">
                             <strong>{{ $message }}</strong>

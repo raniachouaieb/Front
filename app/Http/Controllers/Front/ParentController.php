@@ -47,6 +47,26 @@ class ParentController extends Controller
     public function contact(){
         return view('front.contact');
     }
+
+    public function sendMessage(Request $request){
+        //return ($request->bakkaya);
+        try {
+            $user = [
+                'name' => Auth::guard('parente')->user()->nomPere,
+                'info' => 'Laravel & Python Devloper',
+                'msg'=>$request->bakkaya
+            ];
+
+            \Mail::to('raniachouaieb82@gmail.com')->send(new \App\Mail\ContactUs($user));
+
+            dd("success");
+
+        }catch (\Exception $exception){
+            return $exception;
+        }
+
+    }
+
     public function apropos(){
         return view('front.apropos');
     }

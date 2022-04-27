@@ -2,25 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <title>Mobile Template</title>
-
-    <!-- Google font file. If you want you can change. -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Fontawesome font file css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/font-awesome.min.css')}}">
-
-    <!-- Template global css file. Requared all pages -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/global.style.css')}}">
-
-</head>
+@include('includes.header')
 
 <body>
 <style>
@@ -101,7 +83,7 @@
         cursor: pointer;
         padding: 10px 5px;
         margin: 10px 5px;
-       /* margin-left: 185px;*/
+        /* margin-left: 185px;*/
     }
 
     #msform .action-button:hover,
@@ -181,7 +163,7 @@
         content: "\f09d"
     }
     #progressbar #infoEleve:before {
-    font-family: FontAwesome;
+        font-family: FontAwesome;
         content: "\f09d"
     }
     #progressbar #condition:before {
@@ -409,7 +391,7 @@
 
                             <hr />
                             <p>Enfant</p>
-                         </div>
+                        </div>
 
 
                         <div class="form-group">
@@ -454,9 +436,9 @@
                     </fieldset>
 
 
-                <div class="form-row txt-center w-text">
-                    Already have an account? <a href="{{route('getLogin')}}" data-loader="show">Login</a>
-                </div>
+                    <div class="form-row txt-center w-text">
+                        Already have an account? <a href="{{route('getLogin')}}" data-loader="show">Login</a>
+                    </div>
                 </form>
             </div>
         </main>
@@ -553,75 +535,75 @@
 
         //var infoEleve = document.getElementById('info-eleve');
 
-             counter+=1;
+        counter+=1;
 
-            $('#info-eleve').append( '<div id="field1'+counter+'">'+
+        $('#info-eleve').append( '<div id="field1'+counter+'">'+
             '<input type="text" name="nomEleve'+counter+'" placeholder="Nom" class="form-control @error('nomEleve') is-invalid @enderror"/>'+
             '@error('nomEleve')'+
             '<span class="invalid-feedback" role="alert">'+
-               '<strong>{{ $message }}</strong>'+
-       '</span>'+
+            '<strong>{{ $message }}</strong>'+
+            '</span>'+
             '@enderror'+
             '<input type="text" name="prenomEleve'+counter+'" placeholder="Prénom" class="form-control @error('prenomEleve') is-invalid @enderror" />'+
             '@error('prenomEleve')'+
             '<span class="invalid-feedback" role="alert">'+
-                                             '<strong>{{ $message }}</strong>'+
-                                            '</span>'+
+            '<strong>{{ $message }}</strong>'+
+            '</span>'+
             '@enderror'+
             '<input type="date" name="birth'+counter+'" placeholder="Date naissance" class="form-control @error('birth') is-invalid @enderror" />'+
             '@error('birth')'+
             '<span class="invalid-feedback" role="alert">'+
-                                            ' <strong>{{ $message }}</strong>'+
-                                            '</span>'+
+            ' <strong>{{ $message }}</strong>'+
+            '</span>'+
             '@enderror'+
             '<div class="row">'+
-                '<div class="col-4">'+
-                    '<label class="genre">Gender</label>'+
-                '</div>'+
-                '<div class="col-8">'+
-                    '<select class="list-dt" id="month" name="gender'+counter+'" class="form-control @error('gender') is-invalid @enderror" style="width: 295px">'+
-                        '<option selected>Gender</option>'+
-                       '<option value="garcon" > Garcon </option>'+
-                        '<option value="fille" > Fille </option>'+
-                    '</select>'+
-                    '@error('gender')'+
-                    '<span class="invalid-feedback" role="alert">'+
-                                                      '<strong>{{ $message }}</strong>'+
-                                                    '</span>'+
-                    '@enderror'+
-               '</div>'+
+            '<div class="col-4">'+
+            '<label class="genre">Gender</label>'+
+            '</div>'+
+            '<div class="col-8">'+
+            '<select class="list-dt" id="month" name="gender'+counter+'" class="form-control @error('gender') is-invalid @enderror" style="width: 295px">'+
+            '<option selected>Gender</option>'+
+            '<option value="garcon" > Garcon </option>'+
+            '<option value="fille" > Fille </option>'+
+            '</select>'+
+            '@error('gender')'+
+            '<span class="invalid-feedback" role="alert">'+
+            '<strong>{{ $message }}</strong>'+
+            '</span>'+
+            '@enderror'+
+            '</div>'+
             '</div>'+
             '<div class="row">'+
-                '<div class="col-4">'+
-                    '<label class="pay">Niveau</label>'+
-                '</div>'+
-                '<div class="col-8">'+
-                    '<select class="list-dt" id="niv" name="niveau'+counter+'" class="form-control @error('niveau') is-invalid @enderror" style="width: 295px">'+
-                        '<option value="" selected> Niveau </option>'+
-                        '@foreach($niveaux as $niv)'+
-                       '<option value="{{$niv->id}}" > {{$niv->level}}</option>'+
-                        '@endforeach'+
-                    '</select>'+
-                    '@error('niveau')'+
-                    '<span class="invalid-feedback" role="alert">'+
-                                                      '<strong>{{ $message }}</strong>'+
-                                                    '</span>'+
-                    '@enderror'+
-                '</div>'+
-           '</div>'+
-        '</div>'+ '<hr />'+
-        '<p>Eleve'+counter+'</p>');
+            '<div class="col-4">'+
+            '<label class="pay">Niveau</label>'+
+            '</div>'+
+            '<div class="col-8">'+
+            '<select class="list-dt" id="niv" name="niveau'+counter+'" class="form-control @error('niveau') is-invalid @enderror" style="width: 295px">'+
+            '<option value="" selected> Niveau </option>'+
+            '@foreach($niveaux as $niv)'+
+            '<option value="{{$niv->id}}" > {{$niv->level}}</option>'+
+            '@endforeach'+
+            '</select>'+
+            '@error('niveau')'+
+            '<span class="invalid-feedback" role="alert">'+
+            '<strong>{{ $message }}</strong>'+
+            '</span>'+
+            '@enderror'+
+            '</div>'+
+            '</div>'+
+            '</div>'+ '<hr />'+
+            '<p>Eleve'+counter+'</p>');
 
 
     }
 </script>
 <script>
 
-        $('html').on('click', '.remove-div', function (e) {
-            e.preventDefault();
-            $(this).parent('div').remove();
-            counter--;
-        });
+    $('html').on('click', '.remove-div', function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        counter--;
+    });
 
 </script>
 

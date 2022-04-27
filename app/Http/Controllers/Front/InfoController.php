@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
-use App\Models\Classroom_Info;
+use App\Models\ClassroomInfo;
 use App\Models\Info;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -28,8 +28,24 @@ class InfoController extends Controller
 
     }
     public function listInfo($id){
-        $infos= Classroom_Info::where('classroom_id',$id)->get();
-        return view('front.listInfo',compact('infos'));
+        $idInf = [];
+        $infos = ClassroomInfo::where('classroom_id',$id)->get();
+        //return $infos->info_id;
+        foreach ($infos as $info ){
+            array_push($idInf, $info['info_id']) ; //id mta3 info min  classinfo
+
+        }
+
+        for ($idf=0; $idf<$idInf; $idf++ ){
+            $listInfff= Info::where('id',$idf)->get();
+        }
+
+
+        return $listInfff;
+
+        $listInfos = Info::where('id',$infos['info_id'])->get();
+        return $listInfos;
+        return view('front.listInfo',compact('listInfff'));
     }
 
 }

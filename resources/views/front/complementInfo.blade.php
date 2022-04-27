@@ -2,24 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <title>Mobile Template</title>
-
-    <!-- Google font file. If you want you can change. -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Fontawesome font file css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/font-awesome.min.css')}}">
-
-    <!-- Template global css file. Requared all pages -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/global.style.css')}}">
-</head>
+@include('includes.header')
 
 <body>
+<style>
+    span{ color: #00a125; font-size: 18px;}
 
+</style>
 <div class="wrapper">
   @include('includes.sidebar')
     <div class="wrapper-inline">
@@ -36,7 +25,7 @@
         <!-- Header area end -->
         <!-- Page content start -->
         <main>
-            <div class="container">
+            <section class="container">
 
 
             <form method="post" action="{{route('updateAll', Auth::guard('parente')->user()->id)}}">
@@ -106,7 +95,7 @@
                 </div>
 
                 <div class="form-divider"></div>
-                <div class="form-label-divider"><span>Contact</span></div>
+                <div class="form-label-divider"><span style=" ">Contact</span></div>
                 <div class="form-divider"></div>
 
                 <div class="form-row-group with-icons">
@@ -134,12 +123,14 @@
                 <div class="form-divider"></div>
             </form>
 
-                <div class="section-head">
-                    <h4 class="title-main">Enfants</h4>
-                </div>
+
+                <div class="form-divider"></div>
+                <div class="form-label-divider"><span>Enfant(s)</span></div>
+                <div class="form-divider"></div>
+
                 <div class="row">
                     @foreach($enfant as $enf)
-                        <div class="col-2">
+                        <div class="col-6">
 
                                         <form action="{{route('updateElev', $enf->id)}}" method="post" >
                                             @csrf
@@ -159,7 +150,7 @@
                     @endforeach
 
                 </div>
-            </div>
+            </section>
         </main>
         <!-- Page content end -->
     </div>
