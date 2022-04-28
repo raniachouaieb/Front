@@ -29,9 +29,9 @@
         <section class="container">
             <div>
                 <ul class="courses-list list-unstyled mb-0">
-                    @if($listInfff && $listInfff->count()>0)
-                    {
-                    @foreach($listInfff as $info)
+                    @if($listInf && $listInf->count()>0)
+
+                    @foreach($listInf as $info)
                             <li>
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex align-items-center course-item">
@@ -42,7 +42,8 @@
                                             <h4 class="courses-name" style="margin-left: 3%">{{$info->titre}}</h4>
                                             <div class="row">
                                                 <label>Détail: </label>
-                                                {{$info->info}}
+                                                {!!$info->info  !!}
+
                                             </div>
                                         </div>
 

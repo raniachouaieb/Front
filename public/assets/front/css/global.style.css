@@ -260,7 +260,7 @@ nav.menu ul.main-menu>li li a{
 	width: 100%;
 	bottom: 0;
 	top: 0;
-	background: url("../images/bg.jpg");
+	background: url("../images/bc.jpg");
 	overflow: auto;
 }
 .wrapper.with-bg-image .wrapper-inline{
@@ -274,7 +274,7 @@ nav.menu ul.main-menu>li li a{
 [5. Header]
 *------------------------------------------------------------------*/
 .banner-div{
-	background: url(../images/banner.png) center no-repeat;
+	/*background: url(../images/banner.png) center no-repeat;*/
 	background-size: cover;
 	margin-top: 70px;
 	border-radius: 15px
@@ -305,12 +305,12 @@ nav.menu ul.main-menu>li li a{
     margin-bottom: 15px
 }
 .section-head .title-main{
-	margin: 17;
+	margin: 17px;
     font-size: 18px;
     color: #019723;
     flex: 8;
-    margin-top: 25px;
-    margin-left: 155px;"
+   /* margin-top: 25px;*/
+    margin-left: 155px;
 }
 .section-head .c-btn{
 	flex: 1
@@ -335,7 +335,7 @@ nav.menu ul.main-menu>li li a{
 .s5-bg{background: #f7f7ff !important}
 .creamy-bg{
     /*background: url(../images/splash-screen.jpg) center no-repeat;*/
-	background: linear-gradient(to left, #100DD1, #083afb)
+	background: linear-gradient(to left, #097967, #083afb)
 }
 .provide-item{
 	padding: 20px 10px;
@@ -380,10 +380,11 @@ margin-top: 0
     border-radius: 15px;
 }
 .inst-card.v2{
-	background: gainsboro;
-	margin-bottom: 15px;
+    background: #dddddd94;
+    margin-bottom: 15px;
     margin-right: 10px;
     margin-left: 10px;
+    box-shadow: 1px 1px 4px 3px rgb(0 123 255 / 13%);
 }
 .inst-item{
 	position: relative;
@@ -396,7 +397,8 @@ margin-top: 0
 	margin-top: -5px
 }
 .inst-img-wrapper img{
-	max-width: 120px
+	max-width: 120px;
+    box-shadow: 2px 2px 1px 0px #28a74c;
 }
 .inst-info{
 	padding-left: 112px
@@ -655,7 +657,9 @@ div.container{
 select.form-element{
 	-webkit-appearance: none;
     background-color: white;
+    /*
     background-image: url(../images/up-down.svg);
+    */
     background-position : right center;
     background-repeat: no-repeat;
     padding-right: 1.5em;
@@ -1728,7 +1732,9 @@ select.form-element{
 .author-item .author-bg{
 	width: 100%;
 	height: auto;
+    /*
 	background: url('../images/avatar-bg.jpg') right center;
+    */
 	position: relative;
 	background-size: cover;
 	background-position-y:-50px;
@@ -1998,12 +2004,12 @@ select.form-element{
 	margin-bottom: 30px
 }
 .courses-list li{
-	background: #fff;
+    background: #ffffffa8;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #28a74538;
     position: relative;
     margin: 0 0 10px;
-    box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.04);
+    box-shadow: 2px 2px 14px 4px rgb(0 0 0 / 17%);
 }
 .courses-name{
 	margin: 0;
@@ -2205,9 +2211,10 @@ select.form-element{
     font-weight: 600;
 }
 .profile-bg{
-	background: #fff;
-    box-shadow: 0px 0px 1px 0px;
+    background: #ffffffa3;
+    box-shadow: 1px 1px 14px 1px;
 }
+
 .exp{
 	width: 50%;
     text-align: center;
@@ -2986,7 +2993,7 @@ footer ul li a i,
     flex-wrap: wrap;
     /*margin-right: -15px;*/
     margin-left: -1px;
-    position: relative;
+    position: inherit;
 }
 .container .row .col-2:first-child{
     margin-right: 4%;

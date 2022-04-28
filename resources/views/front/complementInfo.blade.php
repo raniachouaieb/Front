@@ -6,7 +6,7 @@
 
 <body>
 <style>
-    span{ color: #00a125; font-size: 18px;}
+    span{ color: #019723; font-size: 18px;}
 
 </style>
 <div class="wrapper">
