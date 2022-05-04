@@ -127,7 +127,7 @@
         color: #2C3E50;
         margin-bottom: 10px;
         font-weight: bold;
-        text-align: left
+        text-align: center;
     }
 
     #progressbar {
@@ -282,7 +282,7 @@
                             @enderror
                         </div>
 
-                        <input type="button" name="next" class="next action-button" value="Next Step" />
+                        <input type="button" name="next" class="next action-button" value="Suivant ->" />
                     </fieldset>
 
                     <fieldset>
@@ -320,27 +320,27 @@
                                     </span>
                             @enderror
 
-                        </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                        <input type="button" name="make_payment" class="next action-button" value="Next" />
+                        </div> <input type="button" name="previous" class="previous action-button-previous" value="Précedent" />
+                        <input type="button" name="make_payment" class="next action-button" value="Suivant" />
                     </fieldset>
                     <fieldset>
 
                         <div class="form-card" id="info-eleve">
                             <h2 class="fs-title">Information Enfants</h2>
                             <div id="field1">
-                                <input type="text" name="nomEleve1" placeholder="Nom" class="form-control @error('nomEleve') is-invalid @enderror"/>
+                                <input type="text" name="nomEleve" placeholder="Nom" class="form-control @error('nomEleve') is-invalid @enderror"/>
                                 @error('nomEleve')
                                 <span class="invalid-feedback" role="alert">
                                               <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror
-                                <input type="text" name="prenomEleve1" placeholder="Prénom" class="form-control @error('prenomEleve') is-invalid @enderror" />
+                                <input type="text" name="prenomEleve" placeholder="Prénom" class="form-control @error('prenomEleve') is-invalid @enderror" />
                                 @error('prenomEleve')
                                 <span class="invalid-feedback" role="alert">
                                              <strong>{{ $message }}</strong>
                                             </span>
                                 @enderror
-                                <input type="date" name="birth1" placeholder="Date naissance" class="form-control @error('birth') is-invalid @enderror" />
+                                <input type="date" name="birth" placeholder="Date naissance" class="form-control @error('birth') is-invalid @enderror" />
                                 @error('birth')
                                 <span class="invalid-feedback" role="alert">
                                              <strong>{{ $message }}</strong>
@@ -351,7 +351,7 @@
                                         <label class="genre">Gender</label>
                                     </div>
                                     <div class="col-8">
-                                        <select  id="month" name="gender1" class="form-control @error('gender') is-invalid @enderror list-dt"  style="width: 295px">
+                                        <select  id="month" name="gender" class="form-control @error('gender') is-invalid @enderror list-dt"  style="width: 295px">
                                             <option selected>Gender</option>
                                             <option value="garcon" > Garcon </option>
                                             <option value="fille" > Fille </option>
@@ -368,7 +368,7 @@
                                         <label class="pay">Niveau</label>
                                     </div>
                                     <div class="col-8">
-                                        <select id="niv" name="niveau1" class="form-control @error('niveau') is-invalid @enderror list-dt" style="width: 295px">
+                                        <select id="niv" name="niveau" class="form-control @error('niveau') is-invalid @enderror list-dt" style="width: 295px">
                                             <option value="" selected> Niveau </option>
                                             @foreach($niveaux as $niv)
                                                 <option value="{{$niv->id}}" > {{$niv->level}}</option>
@@ -390,16 +390,14 @@
 
                         <div class="form-group">
                             <div class="col-md-4 col-md-offset-8">
-                                <a id="add-more"  class="btn btn-success" onclick="add_more_enfant()" style="color: white;">Add More +</a>
+                                <a id="add-more"  class="btn btn-success" onclick="add_more_enfant()" style="color: white;">Ajouter +</a>
                             </div>
-                            <div class="col-md-4 col-md-offset-8">
-                                <a id="remove-div"  class="btn btn-success"  style="color: white;">Remove</a>
-                            </div>
+
                         </div>
 
 
-                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                        <input type="button" name="next" class="next action-button" value="Next Step" />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Précedent" />
+                        <input type="button" name="next" class="next action-button" value="Suivant" />
 
                     </fieldset>
 
@@ -413,8 +411,8 @@
 
                         </div>
                         <div class="row">
-                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                        <input type="submit" name="next" class="next action-button button circle block orange" value="Confirm" />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Précedent" />
+                        <input type="submit" name="next" class="next action-button button circle block orange" value="Confirmer" />
                         </div>
                     </fieldset>
                     <fieldset>

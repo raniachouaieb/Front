@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
 use App\Notifications\VerifyEmail;
 use App\Notifications\SendMessage;
 use App\Notifications\ResetPasswordNotification;
 use App\Models\Student;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 
-
-class Parente extends Authenticatable implements MustVerifyEmail
+class Parente extends Authenticatable implements MustVerifyEmail, JWTSubject
 {
     use Notifiable;
     protected $table='parentes';
@@ -77,5 +76,13 @@ class Parente extends Authenticatable implements MustVerifyEmail
     }*/
 
 
+    public function getJWTIdentifier()
+    {
+       return $this->getKey();
+    }
 
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }

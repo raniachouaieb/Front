@@ -24,7 +24,7 @@ class RegisterController extends Controller
         return view('front.register', compact('niveaux'));
     }
 
-    public function register(ParentRequest $request){
+    public function register(Request $request){
 
         $parent = Parente::create([
             "nomPere"=>$request->nomPere,
