@@ -40,7 +40,7 @@
                     <div class="form-row-group with-icons">
                         <div class="form-row no-padding">
                             <i class="fa fa-envelope"></i>
-                            <input type="email" name="email" class="form-element" placeholder="Email address">
+                            <input type="email" name="email" value="{{old('email')}}" class="form-element" placeholder="Email address">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
                     <div class="form-row-group with-icons">
                         <div class="form-row no-padding">
                             <i class="fa fa-lock"></i>
-                            <input type="password" id="password" class="form-element" name="password" placeholder="Password" required autofocus>
+                            <input type="password"  class="form-element" name="password" placeholder="Password" >
                             @if ($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif
@@ -60,7 +60,7 @@
                     <div class="form-row-group with-icons">
                         <div class="form-row no-padding">
                             <i class="fa fa-lock"></i>
-                            <input type="password" id="password" class="form-element" name="password" placeholder="Confirm Password" required autofocus>
+                            <input type="password"  class="form-element" name="password_confirmation" placeholder="Confirm Password" >
                             @if ($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif

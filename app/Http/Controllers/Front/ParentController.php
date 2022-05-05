@@ -61,7 +61,7 @@ class ParentController extends Controller
             Session::flash('statuscode', 'success');
             return redirect()->route('mainScreen')->with('status', ' Votre message est envoyée avec succées');
 
-            dd("success");
+
 
         }catch (\Exception $exception){
             return $exception;

@@ -22,6 +22,10 @@ Route::group([ 'namespace'=>'Api','middleware'=>'api', 'prefix'=>'auth'], functi
    Route::post('register', 'AuthController@register');
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
+    Route::post('sendPasswordResetLink', 'PasswordResetRequestController@sendEmail');
+    Route::post('resetPassword', 'ChangePasswordController@passwordResetProcess');
+
+
 
 
 });
@@ -30,7 +34,9 @@ Route::group([ 'namespace'=>'Api','middleware'=>'api', 'prefix'=>'menu'], functi
     Route::get('profile', 'ParentController@profile');
 });
 Route::group([ 'namespace'=>'Api','middleware'=>'api', 'prefix'=>'user'], function(){
-    Route::get('profile', 'ParentController@profile');
+    Route::get('profile/{id}', 'ParentController@profile');
+    Route::post('contact', 'ParentController@sendMessage');
+    Route::post('suggestion', 'SuggestionController@createSuggestion');
 
 
 });

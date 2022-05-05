@@ -59,7 +59,8 @@ class ForgotPassController extends Controller
         $request->validate([
             'email' => 'required|email|exists:parentes',
             'password' => 'required|string|min:8|confirmed',
-            'password_confirmation' => 'required'
+
+
         ]);
 
         $updatePassword = DB::table('password_resets')
