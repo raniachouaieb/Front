@@ -36,14 +36,14 @@
                         @if($travails && $travails->count()>0)
 
                             @foreach($travails as $travail)
-                            <li>
+                            <li style="width: 60%;margin-left: 20%;">
 
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex align-items-center course-item">
                                         <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
                                         <div class="d-flex align-items-center course-item">
                                             <div class="ml-10 wd-100">
-                                                <h4 class="courses-name"><label>Sujet: </label>{{$travail->titre_travail}}</h4>
+                                                <h4 class="courses-name"><label>Sujet: </label> {{$travail->titre_travail}}</h4>
                                                 <div class="">
                                                     <div class=""><label>Détail: </label> {{$travail->detail_travail}}</div>
                                                 </div>
@@ -70,6 +70,19 @@
 
                             </li>
                             @endforeach
+                        @else
+
+                                <li>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center course-item">
+                                            <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
+
+                                            <div class="row">
+                                                <h5> Aucun devoir pour votre enfant</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                         @endif
 
                     </ul>

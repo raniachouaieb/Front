@@ -109,4 +109,68 @@
         @endif
 
     </script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase.js"></script>
+
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyBqDXA5OPm_rY87OYWj6uoyGMTsDX9LBbQ",
+            authDomain: "schoolapp-c3163.firebaseapp.com",
+            databaseURL: "https://schoolapp-c3163.firebaseio.com",
+            projectId: "schoolapp-c3163",
+            storageBucket: "schoolapp-c3163.appspot.com",
+            messagingSenderId: "810121300083",
+            appId: "1:810121300083:web:90550d5b78ab2bf4c54206",
+            measurementId: "G-V5P1TB8637"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const messaging = firebase.messaging();
+
+        function initFirebaseMessagingRegistration() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    return messaging.getToken()
+                })
+                .then(function(token) {
+                    console.log(token);
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        url: '{{ url('save-token') }}',
+                        type: 'POST',
+                        data: {
+                            token: token
+                        },
+                        dataType: 'JSON',
+                        success: function (response) {
+                            alert('Token saved successfully.');
+                        },
+                        error: function (err) {
+                            console.log('User Chat Token Error'+ err);
+                        },
+                    });
+
+                }).catch(function (err) {
+                console.log('User Chat Token Error'+ err);
+            });
+        }
+
+        messaging.onMessage(function(payload) {
+            const noteTitle = payload.notification.title;
+            const noteOptions = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+            };
+            new Notification(noteTitle, noteOptions);
+        });
+
+    </script>
+
 @stop

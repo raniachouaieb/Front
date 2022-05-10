@@ -117,7 +117,7 @@
                 <div class="form-divider"></div>
 
                 <div class="form-row">
-                    <button type="submit" class="button circle block orange">Update</button>
+                    <button type="submit" class="button circle block orange" style=" width: 56%;margin-left: 20%;">Update</button>
                 </div>
 
                 <div class="form-divider"></div>

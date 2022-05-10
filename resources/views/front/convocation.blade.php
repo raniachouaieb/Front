@@ -32,21 +32,19 @@
                 @foreach($eleves as $enf)
                     <div class="touch" onclick="window.location.href='{{route('listConvocation', $enf->id)}}';">
                         <div class="inst-card v2">
-                            <div class="inst-item">
-                                <div class="inst-img-wrapper v2">
-                                    <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="80" height="80" style="border-radius: 50%;margin-top: 25px;">
+                            <div class="inst-item row">
+                                <div class="col-md-6">
+                                    <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="25%"
+                                         height="100%" style="    border-radius: 58%;  margin-top: -2px;margin-right: 7%;float: right;">
                                 </div>
-                                <div class="inst-info">
-                                    <h4 class="instname">{{$enf->nomEleve}} {{$enf->prenomEleve}}</h4>
-                                    <div class="row">
-                                        <label>Niveau : </label>
-                                        <h6> </h6>
-                                    </div>
-                                    <div class="row">
-                                        <label>Classe : </label>
-                                        <h6> </h6>
-                                    </div>
-                                    <label style="margin-left: -18px">Total Convocation: </label>
+                                <div class="col-md-6" style="font-size: 20px">
+                                    <label><strong>{{$enf->nomEleve}} {{$enf->prenomEleve}}</strong></label>
+                                    <br>
+                                        <label>Niveau : {{$enf->class->level->level}}  </label>
+                                    <br>
+                                        <label>Classe : {{$enf->class->name}} </label>
+                                    <br>
+                                    <label>Total Convocation: </label>
                                     <span class=" badge badge-success" style="width: 10%">
                                 {{$enf->convocations()->count()}}
                             </span>

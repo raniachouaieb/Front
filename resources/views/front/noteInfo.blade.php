@@ -58,8 +58,8 @@
                                         <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="25%"
                                              height="100%" style="    border-radius: 58%;  margin-top: -2px;margin-right: 7%;float: right;">
                                     </div>
-                                    <div class="col-md-6">
-                                        <label >{{$enf->nomEleve}} {{$enf->prenomEleve}}</label>
+                                    <div class="col-md-6"style="font-size: 20px">
+                                        <label><strong>{{$enf->nomEleve}} {{$enf->prenomEleve}}</strong></label>
 
                                         <BR>
 

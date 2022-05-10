@@ -39,7 +39,7 @@
             <div class="text-center">
                 <img src="{{asset('assets/front/images/logo.png')}}" class="logo-img" alt="">
             </div>
-            <div class="container" style="margin-top: 23%;">
+            <div class="container" >
 
 
 
@@ -71,7 +71,7 @@
 
                     <div class="form-mini-divider"></div>
                     <div class="form-row">
-                        <button type="submit" class="button circle block orange">Envoyer</button>
+                        <button type="submit" class="button circle block orange" style="width: 56%;margin-left: 20%;">Envoyer</button>
                     </div>
                 </form>
 

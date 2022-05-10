@@ -35,7 +35,8 @@
         margin-top: 80px;
         margin-bottom: 20px;
         text-align: center;
-        margin-left: 105px;
+        margin-left: 690px;
+
     }
 
     #fda_product_tile span

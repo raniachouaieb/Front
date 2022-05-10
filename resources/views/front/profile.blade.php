@@ -32,7 +32,7 @@
         </div>
             <div class="section-head">
 
-            <button type="submit" class="button circle block orange" style="margin-top: -130px;">Modifier Image</button>
+            <button type="submit" class="button circle block orange" style="margin-top: -130px;width: 60%;margin-left: 20%;">Modifier Image</button>
             </div>
         </form>
 

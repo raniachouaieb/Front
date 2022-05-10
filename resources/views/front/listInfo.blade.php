@@ -35,28 +35,29 @@
                 @forelse($listInf as $info)
                     @foreach($info as $inf)
 
-                        <li>
+                        <li style="width: 60%;margin-left: 20%;">
                             <div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center course-item">
+                                <div class="d-flex align-items-center course-item row">
                                     <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
 
-                                    <div class="row">
-                                        <label>Sujet : </label>
-                                        <h4 class="courses-name" style="margin-left: 3%">{{$inf['titre']}}</h4>
-                                        <div class="row">
-                                            <label>Détail: </label>
-                                            {!!$inf['info']  !!}
-
-                                        </div>
-
+                                    <div class="col-md-6">
+                                        <label >Sujet : {{$inf['titre']}}</label>
+                                        <br>
+                                        <label>
+                                            Détail:
+                                        </label>
+                                            <label>{!!$inf['info']  !!}</label>
+                                        <br>
+                                        <label>Envoyé le : </label>
+                                        <span class=" badge badge-success" style="width: 39%">
+                                        {{date('d/m/Y',strtotime($inf->created_at))}}
+                                        </span>
                                     </div>
 
-                                    <div class="" style="margin: -64px;margin-bottom: -151px; margin-left: -56px;">
-                                        <label>Demandée le : </label>
-                                        {{date('d/m/Y',strtotime($inf->created_at))}}</div>
 
 
-                                </div>
+
+                                 </div>
 
                             </div>
 
