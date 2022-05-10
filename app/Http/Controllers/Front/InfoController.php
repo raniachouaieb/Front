@@ -14,44 +14,44 @@ class InfoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:parente','verified']);
+        $this->middleware(['auth:parente', 'verified']);
     }
 
     public function info()
     {
-        $nbTravail="";
+        $nbTravail = "";
         $classes = Classroom::get();
-        $eleves = Student::where([['parent_id', Auth::guard('parente')->user()->id],['class_id' ,'!=',null]])->get();
-        //$nbTravail= Student::with('travails')->get();
-        //dd($nbTravail);
+        $eleves = Student::where([['parent_id', Auth::guard('parente')->user()->id], ['class_id', '!=', null]])->get();
 
-        return view('front.noteInfo', compact('eleves', 'classes'));
+        $countTotal=[];
+        foreach ($eleves as $eleve) {
+            $nbTravail = ClassroomInfo::where('classroom_id', $eleve->class_id)->count();
+            array_push($countTotal,$nbTravail);
+        }
+
+
+        return view('front.noteInfo', compact('eleves', 'classes','countTotal'));
 
     }
-    public function listInfo($id){
+
+    public function listInfo($id)
+    {
         $idInf = [];
-        $infos = ClassroomInfo::where('classroom_id',$id)->get();
-       // return $infos->count();
-        foreach ($infos as $info ){
+        $infos = ClassroomInfo::where('classroom_id', $id)->get();
+        // return $infos->count();
+        foreach ($infos as $info) {
             $idInf[] = $info['info_id']; //id mta3 info min  classinfo
 
         }
-       // dd($idInf);
-        foreach ($idInf as $listInf) {
-            $listInf = Info::where('id', $idInf)->get();
+       //  dd($idInf);
+        $tab=[];
+        $listInf=[];
+        foreach ($idInf as $listInfo) {
+            $listInformation = Info::where('id', $listInfo)->get();
+            array_push($listInf,$listInformation);
         }
-        //return $listInf;
 
-        /*for ($idf=0; $idf<$idInf; $idf++ ){
-            $listInfff= Info::where('id',$idf)->get();
-        }*/
-
-
-
-
-        /*$listInfos = Info::where('id',$infos['info_id'])->get();
-        return $listInfos;*/
-        return view('front.listInfo',compact('listInf'));
+        return view('front.listInfo', compact('listInf','id'));
     }
 
 }

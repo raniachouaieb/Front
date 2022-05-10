@@ -27,7 +27,7 @@ class Parente extends Authenticatable implements MustVerifyEmail, JWTSubject
         'nomPere', 'prenomPere', 'telPere',
         'professionPere','nomMere','prenomMere','telMere',
         'professionMere','nbEnfants','email','password','adresse',
-        'is_active',
+        'is_active','web_token',
     ];
 
     protected $hidden =[

@@ -305,12 +305,18 @@ nav.menu ul.main-menu>li li a{
     margin-bottom: 15px
 }
 .section-head .title-main{
-	margin: 17px;
-    font-size: 18px;
+    margin: 17px;
+    font-size: 22px;
     color: #019723;
     flex: 8;
-   /* margin-top: 25px;*/
-    margin-left: 155px;
+    text-align: center;
+}
+
+
+.touch {
+    width: 60%;
+    margin-left: 20%;
+    padding-bottom: 1%;
 }
 .section-head .c-btn{
 	flex: 1

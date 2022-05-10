@@ -21,8 +21,9 @@ class Student extends Model
     public function parent(){
         return $this->belongsTo(Parente::class,'parent_id', 'id');
     }
+
     public function class(){
-        return $this->hasOne('App\Models\Classroom', 'class_id', 'id');
+        return $this->belongsTo('App\Models\Classroom','class_id');
     }
     public function matiere(){
         return $this->hasMany('App\Models\Matiere');

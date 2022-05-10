@@ -61,6 +61,8 @@
 <!-- Turbo slider plugin file. requared only wizard pages -->
 <script src="{{asset('assets/front/js/turbo-slider/turbo.min.js')}}"></script>
 <script src="{{asset('assets/front/js/turbo-ini.js')}}"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase.js"></script>
+
 
 </body>
 

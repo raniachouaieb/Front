@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +8,14 @@
 
     <!-- Google font file. If you want you can change. -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
     <!-- Fontawesome font file css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/front/css/font-awesome.min.css')}}">
 
@@ -44,25 +48,33 @@
             @if($eleves && $eleves->count()>0)
 
 
-                @foreach($eleves as $enf)
+                @foreach($eleves as $key=>$enf)
                     <div class="touch" onclick="window.location.href='{{route('listInfo', $enf->class_id)}}';">
                         <div class="inst-card v2">
-                            <div class="inst-item">
-                                <div class="inst-img-wrapper v2">
-                                    <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="80" height="80" style="border-radius: 50%;margin-top: 5px;">
-                                </div>
-                                <div class="inst-info">
-                                    <h4 class="instname">{{$enf->nomEleve}} {{$enf->prenomEleve}}</h4>
+                            <div class="row inst-item">
 
-                                    <div class="row">
-                                        <label>Classe : </label>
-                                        <h6>@foreach($classes as $class)@if($enf->class_id == $class->id ){{$class->name}} @endif @endforeach </h6>
+
+                                    <div class="col-md-6">
+                                        <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="25%"
+                                             height="100%" style="    border-radius: 58%;  margin-top: -2px;margin-right: 7%;float: right;">
                                     </div>
-                                    <!--<label style="margin-left: -18px">Travail à faire réçus : </label>
-                                    <span class=" badge badge-success" style="width: 10%">
+                                    <div class="col-md-6">
+                                        <label >{{$enf->nomEleve}} {{$enf->prenomEleve}}</label>
 
-                            </span>-->
-                                </div>
+                                        <BR>
+
+                                        <label>
+                                            Classe : {{$enf->class->level->level}}  {{$enf->class->name}}
+                                        </label>
+                                        <br>
+                                        <label>Travail à faire réçus : </label>
+                                        <span class=" badge badge-success" style="width: 10%">
+                                        {{$countTotal[$key]}}
+                            </span>
+                                    </div>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -71,7 +83,6 @@
                     <!--        </a>-->
                 @endforeach
             @endif
-
 
 
         </div>

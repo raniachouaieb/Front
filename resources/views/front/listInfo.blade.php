@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,49 +19,68 @@
     </header>
 
 
-        <div class="section-head">
-            <h4 class="title-main" >Liste des informations</h4>
+    <div class="section-head">
+        <?php $eleve = \App\Models\Student::where([['parent_id', Auth::guard('parente')->user()->id], ['class_id', $id]])->first()?>
+        <h4 class="title-main">Liste des informations : <strong>{{$eleve->nomEleve}} {{$eleve->prenomEleve}}</strong>
+        </h4>
 
-        </div>
+    </div>
 
 
-        <section class="container">
-            <div>
-                <ul class="courses-list list-unstyled mb-0">
-                    @if($listInf && $listInf->count()>0)
+    <section class="container">
+        <div>
+            <ul class="courses-list list-unstyled mb-0">
 
-                    @foreach($listInf as $info)
-                            <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center course-item">
-                                        <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
 
+                @forelse($listInf as $info)
+                    @foreach($info as $inf)
+
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center course-item">
+                                    <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
+
+                                    <div class="row">
+                                        <label>Sujet : </label>
+                                        <h4 class="courses-name" style="margin-left: 3%">{{$inf['titre']}}</h4>
                                         <div class="row">
-                                            <label>Sujet : </label>
-                                            <h4 class="courses-name" style="margin-left: 3%">{{$info->titre}}</h4>
-                                            <div class="row">
-                                                <label>Détail: </label>
-                                                {!!$info->info  !!}
+                                            <label>Détail: </label>
+                                            {!!$inf['info']  !!}
 
-                                            </div>
                                         </div>
-
-
-
 
                                     </div>
 
+                                    <div class="" style="margin: -64px;margin-bottom: -151px; margin-left: -56px;">
+                                        <label>Demandée le : </label>
+                                        {{date('d/m/Y',strtotime($inf->created_at))}}</div>
+
+
                                 </div>
 
-                            </li>
+                            </div>
 
-                 </ul>
-                @endforeach
-                @endif
+                        </li>
 
 
-            </div>
-        </section>
+                    @endforeach
+                @empty
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center course-item">
+                                <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
+
+                                <div class="row">
+                                    <h5> Aucune information envoyer</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                @endforelse
+            </ul>
+
+        </div>
+    </section>
 
 
 </div>

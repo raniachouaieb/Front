@@ -24,7 +24,7 @@ class Classroom extends Model
     }
 
     public function level(){
-        return $this->hasOne(Level::class, 'id_level', 'id');
+        return $this->belongsTo(Level::class, 'id_level', 'id');
     }
     public function infos(){
         return $this->belongsToMany('App\Models\Info');

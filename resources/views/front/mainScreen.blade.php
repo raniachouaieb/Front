@@ -8,7 +8,7 @@
         <header>
             <!-- extra class no-background -->
 
-            <h1 class="page-title">Home Page</h1>
+            <h1 class="page-title">Accueil</h1>
 
             <div class="navi-menu-button">
                 <em></em>
