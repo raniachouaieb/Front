@@ -52,9 +52,8 @@ class RegisterController extends Controller
             "parent_id"=>$parent->id,
 
         ]);
-        Session::flash('statuscode', 'status');
-
-        return view('front.home')->with('status', ' You are now registred successfully! Please check your email to verification link!');
+        Session::flash('statuscode', 'success');
+        return redirect()->route('getLogin')->with('status', ' You are now registred successfully! Please check your email to verification link!');
 
 
 

@@ -50,7 +50,7 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('listConvocation/{id}', 'ConvocationController@listConvocation')->name('listConvocation');
 
 
-    Route::post('/save-token', 'ParentController@saveToken')->name('save-token');
+    Route::post('save-token', 'ParentController@saveToken')->name('save-token');
 
 
 

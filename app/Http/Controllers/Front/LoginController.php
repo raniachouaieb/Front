@@ -27,9 +27,13 @@ class LoginController extends Controller
                 Session::flash('statuscode', 'success');
                 return redirect()->route('mainScreen')->with('status', 'Bienvenue! ');
             }
+            elseif(Auth::guard('parente')->user()->email_verified_at == Null){
+                Session::flash('statuscode', 'error');
+                return redirect()->route('getLogin')->with('status', ' ton email n\' est pas encore verifié ');
+            }
             else{
                 Session::flash('statuscode', 'error');
-                return view('front.login')->with('status', ' not yet verified');
+                return redirect()->route('getLogin')->with('status', ' Désolé, Vous etes pas encore acceptez');
             }
         }
 

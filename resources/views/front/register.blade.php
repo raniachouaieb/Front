@@ -404,8 +404,8 @@
                     <fieldset>
                         <div class="form-card">
                             <div class="row">
-                                <input type="checkbox" id="terms" >
-                                Vous devez accepter nos <a href="" style=" color: #17a2b8"> termes et conditions</a>
+                                <input type="checkbox" id="terms" >Vous devez accepter nos <a href="" style=" color: #17a2b8"> termes et conditions</a>
+
 
                             </div>
 

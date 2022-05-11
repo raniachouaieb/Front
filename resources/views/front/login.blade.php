@@ -1,5 +1,18 @@
 @extends('layouts.login')
 @section('content')
+    <style>
+        .eye{
+            position: absolute;
+            right: 8%;
+            transform: translate(0, -50%);
+            top: 63%;
+            cursor: pointer;
+        }
+        .fa{
+            font-size: 18px;
+            color: #7a797e;
+        }
+    </style>
     <main>
         @include('includes.alerts.flash')
 
@@ -11,10 +24,12 @@
             <div class="form-divider"></div>
             <form method="post" action="{{route('login')}}">
                 @csrf
-            <div class="form-row-group with-icons">
+
+            <div class="card shadow form-row-group with-icons">
                 <div class="form-row no-padding">
                     <i class="fa fa-user"></i>
-                    <input type="email" name="email" class="form-element"  value="{{old('email')}}" placeholder="Username or Email">
+
+                    <input type="email" name="email" class="form-element"  value="{{old('email')}}" placeholder="Adresse Email">
                     @error('email')
                     <span class="invalid-feedback" role="alert" style="color: crimson">
                             <strong>{{ $message }}</strong>
@@ -24,7 +39,9 @@
 
                 <div class="form-row no-padding">
                     <i class="fa fa-lock"></i>
-                    <input type="password" name="password" class="form-element" placeholder="Password">
+                    <input type="password" id="password" name="password" class="form-element" placeholder="Password">
+                    <span><i class="fa fa-eye eye" aria-hidden="true" id="eye" onclick="toggle()"></i></span>
+
                     @error('password')
                     <span class="invalid-feedback " role="alert" style="color: crimson">
                             <strong>{{ $message }}</strong>
@@ -34,7 +51,7 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="button circle block orange" >Login</button>
+                <button type="submit" class="button circle block orange" style="width: 56%;margin-left:20%;background-color:#84bedf;" >Login</button>
             </div>
 
 
@@ -63,4 +80,6 @@
         @endif
 
     </script>
+    <script src="{{ asset('js/togglePassword.js')}}"></script>
+
 @endsection

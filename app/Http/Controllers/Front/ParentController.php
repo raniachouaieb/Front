@@ -49,7 +49,7 @@ class ParentController extends Controller
     }
     public function saveToken(Request $request)
     {
-        Auth::guard('parente')->user()->update(['device_token'=>$request->token]);
+        Auth::guard('parente')->user()->update(['web_token'=>$request->token]);
         return response()->json(['token saved successfully.']);
     }
 

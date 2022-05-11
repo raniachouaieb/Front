@@ -340,8 +340,12 @@ nav.menu ul.main-menu>li li a{
 .s4-bg{background: rgba(255,255,255,0.7);}
 .s5-bg{background: #f7f7ff !important}
 .creamy-bg{
-    /*background: url(../images/splash-screen.jpg) center no-repeat;*/
-	background: linear-gradient(to left, #097967, #083afb)
+    /*
+    background: url(../images/bc.jpg) center no-repeat;
+    */
+
+	background: linear-gradient(to left, #4b837a, #aee1af24)
+
 }
 .provide-item{
 	padding: 20px 10px;
@@ -823,8 +827,8 @@ select.form-element{
 }
 .enterance input,
 .enterance textarea,
-.enterance label{color: #fff}
-.enterance a{color: #10f3b4}
+.enterance label{color: #121010}
+.enterance a{color: #43a8e6}
 .enterance .form-row-group .form-row {
     padding: 0 10px;
     margin-bottom: 20px;
@@ -3016,4 +3020,5 @@ footer ul li a i,
     position: absolute;
     margin-bottom: -7%;
 }
+
 
