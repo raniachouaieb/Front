@@ -19,7 +19,7 @@
     </header>
 
     <div class="section-head">
-    <h4 class="title-main" style="margin-left: 32%;">Liste des convocations</h4>
+    <h4 class="title-main" >Liste des convocations</h4>
 
     </div>
 
@@ -27,11 +27,11 @@
 
         <div>
 
-            <ul class="courses-list list-unstyled mb-0" style="margin-top: 14%;">
+            <ul class="courses-list list-unstyled mb-0" >
                 @if($convocations && $convocations->count()>0)
 
                     @foreach($convocations as $convocation)
-                        <li>
+                        <li style="width: 60%;margin-left: 20%;">
 
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center course-item">
@@ -47,13 +47,10 @@
 
                                         </div>
                                     </div>
-                                    <div>
-                                        <span class="badge badge-success" style="position: fixed;margin-top: 7%;margin-left: 22%;">{{$convocation->date_envoie}}</span>
-                                    </div>
 
-
-
-
+                                </div>
+                                <div class="">
+                                    <span class="badge badge-success" style="position: absolute;margin: -44px;margin-left: -55px;;">{{date('d/m/Y',strtotime($convocation->date_envoie))}}</span>
                                 </div>
 
                             </div>
