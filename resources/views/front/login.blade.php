@@ -25,7 +25,7 @@
             <form method="post" action="{{route('login')}}">
                 @csrf
 
-            <div class="card shadow form-row-group with-icons">
+            <div class="card shadow form-row-group with-icons" style=" width: 60%;margin-left: 20%;">
                 <div class="form-row no-padding">
                     <i class="fa fa-user"></i>
 
@@ -51,12 +51,12 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="button circle block orange" style="width: 56%;margin-left:20%;background-color:#84bedf;" >Login</button>
+                <button type="submit" class="button circle block orange" style="width: 60%;margin-left:20%;background-color:#6a1ff470;" >Login</button>
             </div>
 
 
             <div class="form-row txt-center mt-30">
-                <a href="{{route('forgotPass')}}" data-loader="show">Forgot password?</a>
+                <a href="{{route('forgotPass')}}" data-loader="show">Password oublié?</a>
             </div>
 
             <div class="form-row txt-center w-text">

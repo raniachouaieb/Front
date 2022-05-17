@@ -36,7 +36,7 @@
 
                 <form method="post" action="{{route('sendResetLinkEmail')}}">
                     @csrf
-                    <div class="form-row-group with-icons">
+                    <div class="form-row-group with-icons" style=" width: 60%;margin-left: 20%;">
                         <div class="form-row no-padding">
                             <i class="fa fa-envelope"></i>
                             <input type="email" name="email" class="form-element" placeholder="Email address">
@@ -49,12 +49,12 @@
                     </div>
 
                     <div class="form-row">
-                        <button  class="get-started-btn">Send me password</button>
+                        <button type="submit" class="button circle block orange" style="width: 60%;margin-left:20%;background-color:#6a1ff470;" >Changer mot de passe</button>
                     </div>
 
                 </form>
                 <div class="form-row txt-center w-text">
-                    Back to <a href="{{route('getLogin')}}">Login</a>
+                    retour au  <a href="{{route('getLogin')}}">Login</a>
                 </div>
 
             </div>

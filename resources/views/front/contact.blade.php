@@ -27,7 +27,7 @@
             </div>
 
 
-            <div class="contact-address">
+            <div class="contact-address" style="margin-left: 20%;width: 60%;">
                 <div class="contact-item">
                     <i class="fa fa-map-marker"></i> New York City Hall
                 </div>
@@ -50,17 +50,17 @@
             </div>
         <form method="post" action="{{route('sendMessage')}}">
             @csrf
-            <div class="contact-short-info">
+            <div class="contact-short-info" style="margin-left: 20%;width: 60%;">
                 <div class="form-row-group with-icons">
 
                     <div class="form-divider"></div>
                     <div class="form-row no-padding ">
-                        <div class="contact-item"> Message :</div>
+                        <div class=""> Message :</div>
                         <textarea name="message" class="form-element" placeholder="Textarea"></textarea>
                     </div>
                 </div>
             </div>
-            <button type="submit"  class="button circle block orange"><i class="fa fa-send"></i> Envoyer</button>
+            <button type="submit"  class="button circle block orange" style="width: 60%;margin-left: 20%;"><i class="fa fa-send"></i> Envoyer</button>
         </form>
         </main>
         <!-- Page content end -->

@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'parentes',
         ],
+        'parent-api' => [
+            'driver' => 'jwt',
+            'provider' => 'parentes',
+        ],
 
         'api' => [
             'driver' => 'jwt',
