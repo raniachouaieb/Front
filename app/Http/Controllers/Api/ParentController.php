@@ -18,6 +18,7 @@ class ParentController extends Controller
          $this->user = JWTAuth::parseToken()->authenticate();
     }
 
+
     public function profile( $id){
         $parent = Parente::get();
         $class= Classroom::get();
