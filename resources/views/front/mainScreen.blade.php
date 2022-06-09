@@ -73,7 +73,7 @@
 
                 <div class="row">
                         <div class="col-2 text-center">
-                            <a href="product-list.html">
+                            <a href="{{route('getEnfant')}}">
                                 <div class="provide-item s4-bg">
                                     <img src="{{asset('assets/front/images/schedule.png')}}" class="cat imgMainscreen" alt="">
                                     <h4 class="b-text">emploi</h4>

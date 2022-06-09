@@ -50,6 +50,13 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('listConvocation/{id}', 'ConvocationController@listConvocation')->name('listConvocation');
     Route::get('enfants' , 'ParentController@list')->name('enfants');
 
+    Route::get('enfantEmploi', 'EmploiController@getEnfant')->name('getEnfant');
+    Route::get('getEmploiStudent/{id}', 'EmploiController@getEmploibyStudent')->name('getEmploiStudent');
+
+    Route::get('enfantObs', 'EvaluationController@enfantObs')->name('enfantObs');
+    Route::get('evaluation/{id}/{id_niveau}', 'EvaluationController@evaluation')->name('evaluation');
+
+
     Route::post('save-token', 'ParentController@saveToken')->name('save-token');
 
 

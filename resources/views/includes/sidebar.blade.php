@@ -31,6 +31,9 @@
                 <a href=""><img src="{{asset('assets/front/images/bulltin.png')}}" alt=""> bulletin</a>
             </li>
             <li>
+                <a href="{{route('enfantObs')}}"><img src="{{asset('assets/front/images/bulltin.png')}}" alt=""> Evaluation</a>
+            </li>
+            <li>
                 <a href="{{route('apropos')}}"><img src="{{asset('assets/front/images/information.png')}}" alt=""> A propos</a>
             </li>
 
