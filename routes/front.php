@@ -56,6 +56,10 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('enfantObs', 'EvaluationController@enfantObs')->name('enfantObs');
     Route::get('evaluation/{id}/{id_niveau}', 'EvaluationController@evaluation')->name('evaluation');
 
+    Route::get('enfBulltin', 'BulletinController@enfBulltin')->name('enfBulltin');
+    Route::get('bulletin/{id}', 'BulletinController@bulletin')->name('bulletin');
+
+
 
     Route::post('save-token', 'ParentController@saveToken')->name('save-token');
 

@@ -18,7 +18,7 @@
 
         <div class="container enterance">
             <div class="text-center">
-                <img src="{{asset('assets/front/images/logo.png')}}" class="logo-img" alt="">
+                <img src="{{asset('assets/front/images/logo-acad.png')}}"  style="width: 100%" alt="">
             </div>
 
             <div class="form-divider"></div>

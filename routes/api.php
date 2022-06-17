@@ -35,11 +35,37 @@ Route::group([ 'namespace'=>'Api','middleware'=>'api', 'prefix'=>'menu'], functi
 });
 Route::group([ 'namespace'=>'Api','middleware'=>'api', 'prefix'=>'user'], function(){
     Route::get('profile/{id}', 'ParentController@profile');
+    Route::get('complementInfo/{id}', 'ParentController@complementInfo');
+    Route::get('complementInfo/{id}', 'ParentController@complementInfo');
+    Route::post('updateImageParent/{id}', 'ParentController@updateImageParent');
+    Route::post('updateImageEnfant/{id}', 'ParentController@updateImageEnfant');
+    Route::post('updateAll/{id}', 'ParentController@updateAll');
+    Route::post('updateElev/{id}', 'ParentController@updateElev');
+
     Route::post('contact', 'ParentController@sendMessage');
     Route::post('suggestion', 'SuggestionController@createSuggestion');
 
 
 });
 
+Route::group(['namespace'=>'Api', 'middleware'=>'api', 'prefix'=>'task'], function(){
+    Route::get('listEnf', 'TaskController@task');
+    Route::get('listTask/{id}', 'TaskController@listTask');
+
+
+});
+Route::group(['namespace'=>'Api', 'middleware'=>'api', 'prefix'=>'convocation'], function(){
+    Route::get('convocation', 'ConvocationController@convocation');
+    Route::get('listConvocation/{id}', 'ConvocationController@listConvocation');
+});
+
+Route::group(['namespace'=>'Api', 'middleware'=>'api', 'prefix'=>'info'], function(){
+    Route::get('info', 'InfoController@info');
+    Route::get('listInfo/{id}', 'InfoController@listInfo');
+});
+Route::group(['namespace'=>'Api', 'middleware'=>'api', 'prefix'=>'emploi'], function(){
+    Route::get('getEnfant', 'EmploiController@getEnfant');
+    Route::get('getEmploibyStudent/{id}', 'EmploiController@getEmploibyStudent');
+});
 
 

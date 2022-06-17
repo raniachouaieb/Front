@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
-class AuthController extends Controller
+class AuthController
 {
 
     public function __construct(){
-    $this->middleware('auth:api', ['except'=>['login', 'register']]);
+  //  $this->middleware('auth:api', ['except'=>['login', 'register']]);
     }
 
     public function login(LoginRequest  $request){
@@ -35,10 +35,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(ParentRequest $request){
+    public function register(Request $request){
         $validator = Validator::make($request->all(), [
 
             "nomPere"=>"required|string",
+            "prenomPere"=>"required|string",
             "email"=>"required|email|unique:parentes,email"
 
         ]);
@@ -59,6 +60,7 @@ class AuthController extends Controller
                 "adresse"=>$request->adresse,
                 "email"=>$request->email,
                 'password' => Hash::make($request->password),
+
 
             ]);
             $parent->sendEmailVerificationNotification();

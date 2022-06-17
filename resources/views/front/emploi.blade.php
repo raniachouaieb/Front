@@ -23,33 +23,57 @@
         <div>
             <div class="section-head">
                 <h4 class="title-main" >Mes enfants</h4>
-
             </div>
+            <hr width="15%" style="background-color: #0857e7;margin-top: -5%;">
 
-            @if($eleves && $eleves->count()>0)
+
+        @if($eleves && $eleves->count()>0)
 
 
                 @foreach($eleves as $enf)
                     <div class="touch" onclick="window.location.href='{{route('getEmploiStudent', $enf->class_id)}}';">
-                        <div class="inst-card v2">
-                            <div class=" row inst-item">
-                                <div class="col-md-6">
-                                    <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="25%"
-                                         height="100%" style="    border-radius: 58%;  margin-top: -2px;margin-right: 7%;float: right;">
-                                </div>
-                                <div class="col-md-6"style="font-size: 20px">
+                        <div class="card" style=" border-radius: 3%;box-shadow: 0px 0px 7px 0px;padding: 5%;">
+
+                            <img src="{{asset('assets/'.$enf->image)}}" alt=""  width="100" height="100" style="border-radius: 51%;margin-top: 2px;margin-left: 30%; margin-right: 50%;">
+                            <div class="card" style="margin-top: 9%;margin-left: 8%;margin-right: 8%;">
+                                <div style="text-align: center">
                                     <label><strong>{{$enf->nomEleve}} {{$enf->prenomEleve}}</strong></label>
-                                    <br>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="text-align: center;">
+                                        <label style="text-align: center">Niveau scolaire: {{$enf->class->level->level}} </label>
 
-                                    <label>Niveau : {{$enf->class->level->level}}  </label>
-                                    <br>
-
-                                    <label>Classe : {{$enf->class->name}}</label>
-                                    <br>
-
+                                    </div>
+                                    <div class="col-md-4" style="text-align: center">
+                                        <label style="text-align: center">Classe: {{$enf->class->name}} </label>
+                                    </div>
                                 </div>
                             </div>
+
+
+
+
                         </div>
+
+{{--                        <div class="inst-card v2">--}}
+{{--                            <div class=" row inst-item">--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <img src="{{asset('assets/'.$enf->image)}}" alt="" class="inst-ing" width="25%"--}}
+{{--                                         height="100%" style="    border-radius: 58%;  margin-top: -2px;margin-right: 7%;float: right;">--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-6"style="font-size: 20px">--}}
+{{--                                    <label><strong>{{$enf->nomEleve}} {{$enf->prenomEleve}}</strong></label>--}}
+{{--                                    <br>--}}
+
+{{--                                    <label>Niveau : {{$enf->class->level->level}}  </label>--}}
+{{--                                    <br>--}}
+
+{{--                                    <label>Classe : {{$enf->class->name}}</label>--}}
+{{--                                    <br>--}}
+
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 <!--        <a href="{{route('listTask', $enf->id)}}">-->
 

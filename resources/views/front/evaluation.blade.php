@@ -68,7 +68,7 @@
                                     <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
 
                                     <div class="row">
-                                        <h5> Aucun devoir pour votre enfant</h5>
+                                        <h5> Aucune evaluation attribué pour votre enfant</h5>
                                     </div>
                                 </div>
                             </div>

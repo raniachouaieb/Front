@@ -26,9 +26,13 @@ class ParentController extends Controller
         $this->middleware(['auth:parente', 'verified']);
     }
 
-    public function logout() {
+    public function logout(Request  $r) {
 
-        Auth::guard('parente')->logout();
+
+       $user_id= Auth::guard('parente')->user()->id;
+    $r->session()->forget('$user_id');
+       //Auth::guard('parente')->user()->logout();
+//        Session::flush();
         Session::flash('statuscode', 'success');
         return redirect()->route('getLogin')->with('status', 'Logout successfully');
     }

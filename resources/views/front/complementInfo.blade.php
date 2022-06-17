@@ -26,7 +26,9 @@
         <!-- Page content start -->
         <main>
             <section class="container">
-
+                <div class="card">
+                    
+                </div>
 
             <form method="post" action="{{route('updateAll', Auth::guard('parente')->user()->id)}}">
                 @csrf

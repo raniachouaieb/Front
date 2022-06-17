@@ -28,7 +28,7 @@
             </li>
 
             <li>
-                <a href=""><img src="{{asset('assets/front/images/bulltin.png')}}" alt=""> bulletin</a>
+                <a href="{{route('enfBulltin')}}"><img src="{{asset('assets/front/images/bulltin.png')}}" alt=""> bulletin</a>
             </li>
             <li>
                 <a href="{{route('enfantObs')}}"><img src="{{asset('assets/front/images/bulltin.png')}}" alt=""> Evaluation</a>
@@ -49,7 +49,7 @@
                 </a>
 
                 <form id="logout-form" action="{{ route('logoute') }}" method="post" class="d-none">
-                    @csrf
+                    {{ csrf_field() }}
                 </form>
 
             </li>
