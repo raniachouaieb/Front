@@ -27,21 +27,25 @@ class InfoController extends Controller
     public function info()
     {
         $classes = Classroom::get();
-        $eleves = Student::where([['parent_id', Auth::guard('api')->user()->id], ['class_id', '!=', null]])->get();
+        $eleves = Student::with(['class'=> function($q){
+            $q->with('level');
+
+        }])->where('parent_id', Auth::guard('api')->user()->id)->where('class_id' ,'!=',null)->get();
 
         $countTotal=[];
         foreach ($eleves as $eleve) {
-            $nbTravail = ClassroomInfo::where('classroom_id', $eleve->class_id)->count();
-            array_push($countTotal,$nbTravail);
+
+            $nbInformations = ClassroomInfo::where('classroom_id', $eleve->class_id)->count();
+            array_push($countTotal,$nbInformations);
+
         }
-
-
         return response()->json([
             "status"=>true,
             "data"=> $eleves,$countTotal
 
 
         ]);
+
     }
 
     public function listInfo($id)

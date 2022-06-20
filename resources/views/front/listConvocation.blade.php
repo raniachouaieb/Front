@@ -22,6 +22,7 @@
     <h4 class="title-main" >Liste des convocations</h4>
 
     </div>
+    <hr width="19%" color="#477bd9">
 
     <section class="container">
 
@@ -31,7 +32,7 @@
                 @if($convocations && $convocations->count()>0)
 
                     @foreach($convocations as $convocation)
-                        <li style="width: 60%;margin-left: 20%;">
+                        <li style="width: 100%;">
 
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center course-item">
@@ -50,7 +51,7 @@
 
                                 </div>
                                 <div class="">
-                                    <span class="badge badge-success" style="position: absolute;margin: -44px;margin-left: -55px;;">{{date('d/m/Y',strtotime($convocation->date_envoie))}}</span>
+                                    <span class="badge badge-success" style="position: absolute;margin: -44px;margin-left: -14px;;">{{date('d/m/Y',strtotime($convocation->date_envoie))}}</span>
                                 </div>
 
                             </div>

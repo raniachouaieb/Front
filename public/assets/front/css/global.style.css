@@ -302,7 +302,7 @@ nav.menu ul.main-menu>li li a{
 	display: flex;
     align-items: center;
     margin-top: 45px;
-    margin-bottom: 15px
+    margin-bottom: -25px
 }
 .section-head .title-main{
     margin: 17px;

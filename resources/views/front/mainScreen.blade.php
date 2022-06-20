@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-2 text-center mb-15">
                         <a href="{{route('task')}}">
-                            <div class="provide-item s1-bg">
+                            <div class="provide-item ">
                                 <img src="{{asset('assets/front/images/tasks.png')}}" class="cat imgMainscreen" alt="">
                                 <h4 class="b-text">Travail à faire</h4>
                             </div>
@@ -43,7 +43,7 @@
 
                     <div class="col-2 text-center mb-15">
                         <a href="{{route('noteInfo')}}">
-                            <div class="provide-item s2-bg">
+                            <div class="provide-item ">
                                 <img src="{{asset('assets/front/images/info.png')}}" class="cat imgMainscreen" alt="">
                                 <h4 class="b-text">Note d'info</h4>
                             </div>
@@ -54,7 +54,7 @@
                 <div class="row">
                         <div class="col-2 text-center mb-15">
                             <a href="{{route('menuds')}}">
-                                <div class="provide-item s3-bg">
+                                <div class="provide-item ">
                                     <img src="{{asset('assets/front/images/menuds.png')}}" class="cat imgMainscreen" alt="">
                                     <h4 class="b-text">Menu de la semaine</h4>
                                 </div>
@@ -63,7 +63,7 @@
 
                         <div class="col-2 text-center mb-15">
                             <a href="{{route('convocation')}}">
-                                <div class="provide-item s4-bg">
+                                <div class="provide-item ">
                                     <img src="{{asset('assets/front/images/iconConv.png')}}" class="cat imgMainscreen" alt="">
                                     <h4 class="b-text">Convocations</h4>
                                 </div>

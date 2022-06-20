@@ -56,7 +56,8 @@ class EmploiController extends Controller
                 $size = $output;
                 return response()->json([
                     "status"=>true,
-                    "data"=> $emplois,$status,$size
+                    "data"=> $emplois,
+                    "size"=>$size
 
 
                 ]);

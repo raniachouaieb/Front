@@ -44,7 +44,7 @@
                 <h4 class="title-main">Mes enfants</h4>
 
             </div>
-            <hr width="15%" style="background-color: #0857e7;margin-top: -5%;">
+            <hr width="15%" color="#477bd9">
 
             @if($eleves && $eleves->count()>0)
 

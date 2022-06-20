@@ -38,6 +38,8 @@ Route::group(['namespace'=>'Front'],function(){
 
     Route::get('task', 'TravailController@task')->name('task');
     Route::get('listTask/{id}', 'TravailController@listTask')->name('listTask');
+    Route::get('detailTask/{id?}', 'TravailController@detailTask')->name('detailTask');
+
     Route::post('logout', 'ParentController@logout')->name('logoute');
     Route::get('menuds', 'MenuController@list')->name('menuds');
     Route::get('suggestion', 'SuggestionController@suggestion')->name('suggestion');

@@ -71,7 +71,7 @@
 
                     <div class="form-mini-divider"></div>
                     <div class="form-row">
-                        <button type="submit" class="button circle block orange" style="width: 56%;margin-left: 20%;">Envoyer</button>
+                        <button type="submit" class="button circle block orange" style="width: 100%;">Envoyer</button>
                     </div>
                 </form>
 

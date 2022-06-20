@@ -27,6 +27,7 @@
     </div>
 
 
+
     <section class="container">
         <div>
             <ul class="courses-list list-unstyled mb-0">
@@ -35,7 +36,7 @@
                 @forelse($listInf as $info)
                     @foreach($info as $inf)
 
-                        <li style="width: 60%;margin-left: 20%;">
+                        <li style="width: 100%;margin-top: 7%;">
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center course-item row">
                                     <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
@@ -48,10 +49,11 @@
                                         </label>
                                             <label>{!!$inf['info']  !!}</label>
                                         <br>
-                                        <label>Envoyé le : </label>
-                                        <span class=" badge badge-success" style="width: 39%">
+                                        <div class="">
+                                        <span class=" badge badge-success" style=" position: absolute;top: -9px;right:-62px;">
                                         {{date('d/m/Y',strtotime($inf->created_at))}}
                                         </span>
+                                        </div>
                                     </div>
 
 

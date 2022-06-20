@@ -45,6 +45,7 @@
 
         </div>
 
+        <hr width="19%" color="#477bd9">
 
         <div class="clear"></div>
 @include('includes.alerts.flash')
