@@ -52,8 +52,26 @@
         <section class="container">
             @if($emplois && $emplois->count()>0)
             @foreach ($emplois as $emp)
-            <table id="customers" border="5" cellspacing="0" align="center">
+                <div class="crad" style="background-color: #B44B3F;border-top-right-radius:15px;border-top-left-radius:15px;height: 35px;">
+                    <label style="color: #f8f9fa;text-align: center">2021-2022</label>
+                </div>
+                    <table>
+                        <thead style="background-color:#FCD85D; ">
+                        <tr style="margin-top: 5px;width: 100%">
+                            <th colspan="6">{{ __('Monday')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>The table body</td>
+                            <td>with two columns</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table id="customers" border="5" cellspacing="0" align="center">
                 <tr>
+
                     <td class="header"  align="center" height="50">
                         <b>{{ __('Monday')}}</b>
                     </td>

@@ -41,38 +41,44 @@ class EmploiController extends Controller
         ]);
     }
 
-    public function getEmploibyStudent($id)
+    public function getEmploibyStudent(Request $request,$classroom)
     {
-        $emplois = Schedule::where('classroom_id', $id)->where('status', 1)->get();
-            if($emplois){
-                $output = [];
-                $output[0] = isset($emp->monday) ? count(json_decode($emp->monday, true)) : 0;
-                $output[1] = isset($emp->tuesday) ? count(json_decode($emp->tuesday, true)) : 0;
-                $output[2] = isset($emp->wednesday) ? count(json_decode($emp->wednesday, true)) : 0;
-                $output[3] = isset($emp->thursday) ? count(json_decode($emp->thursday, true)) : 0;
-                $output[4] = isset($emp->friday) ? count(json_decode($emp->friday, true)) : 0;
-                $output[5] = isset($emp->saturday) ? count((array)json_decode($emp->saturday, true)) : 0;
-                $status = Schedule::doGetListStatus();
-                $size = $output;
-                return response()->json([
-                    "status"=>true,
-                    "data"=> $emplois,
-                    "size"=>$size
+        $timeStart = microtime(true);
+        $outputs = array();
+        try {
 
-
-                ]);
-            }  else{
-                return response()->json([
-                    "status"=>false,
-                    "message"=>"aucun emploi effectué pour cet classe",
-                    "data"=> $emplois
-
-
-                ]);
+//            $validator = Validator::make($request->all(), [
+//                'level_id' => 'required',
+//                'classroom_id' => 'required',
+//            ]);
+//            if ($validator->fails()) {
+//                return $validator->errors();
+//            }
+            $courses = Schedule::where('classroom_id', $classroom)->where('status',1)->get();
+            $outputs = array();
+            foreach ($courses as $course) {
+                $result = [];
+                $lundi = json_decode($course->monday, true);
+                $result["lundi"] = $lundi;
+                $mardi = json_decode($course->tuesday, true);
+                $result["mardi"] = $mardi;
+                $mercredi = json_decode($course->wednesday, true);
+                $result["mercredi"] = $mercredi;
+                $jeudi = json_decode($course->thursday, true);
+                $result["jeudi"] = $jeudi;
+                $vendredi = json_decode($course->friday, true);
+                $result["vendredi"] = $vendredi;
+                $samedi = json_decode($course->saturday, true);
+                $result["samedi"] = $samedi;
+                $result["name"] = $course->name;
+                array_push($outputs, $result);
             }
-
-
-
+            return $outputs;
+        } catch (\Exception $e) {
+            return $e;
+        }
 
     }
+
+
 }

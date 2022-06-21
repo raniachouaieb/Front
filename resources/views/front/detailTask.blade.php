@@ -34,10 +34,7 @@
             <div>
 
                 <ul class="courses-list list-unstyled mb-0">
-
-
-                            <li style="width: 100%">
-
+                     <li style="width: 100%">
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex align-items-center course-item">
                                         <!--<img class="img-xs" src="img/product/course6.png" alt="Course image">-->
@@ -56,8 +53,6 @@
 
                                             </div>
                                         </div>
-
-
                                         <div class="">
                                             <span class="badge badge-success" style=" position: absolute;top: -9px;right:10px;">
                                                 {{$travails->date_depot}}</span>
@@ -65,35 +60,22 @@
                                         <div class="" style=" position: absolute;bottom:-3px;right:10px;paddingLeft:6px;paddingRight:6px;paddingTop: 2px;paddingBottom: 2px;">
                                             <label>Demandée le : </label>
                                             {{$travails->date_limite}}</div>
-
-
                                     </div>
-
                                 </div>
-
                             </li>
-
-
-
                 </ul>
                 @if(!empty($travails->file))
 
                    <div class="card">
-
-                                        <img src=" http://192.168.1.15:8080/assets/{{($travails->file)}}" alt="" width="339" height="180" >
+                          <img src=" http://192.168.1.23:8080/assets/{{($travails->file)}}" alt="" width="339" height="180" >
                    </div>
-
-
                 @else
 
                     <div class="card">
                         <img src="{{ asset('assets/uploads/nomage.jpg') }}" alt="" width="339" height="180" >
-
                     </div>
                 @endif
                     </ul>
-
-
 
             </div>
         </section>

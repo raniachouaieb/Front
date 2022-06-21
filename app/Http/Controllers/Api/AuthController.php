@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\LoginRequestApi;
 use App\Http\Requests\ParentRequest;
 use App\Models\Parente;
 use App\Models\Student;
@@ -19,20 +20,35 @@ class AuthController
   //  $this->middleware('auth:api', ['except'=>['login', 'register']]);
     }
 
-    public function login(LoginRequest  $request){
-        $credentials = $request->only("email", 'password');
-        $token = null;
+    public function login(LoginRequestApi  $request){
 
-        if (!$token = auth()->guard('api')->attempt($credentials)){
-            return response()->json([
-                "status"=>false,
-                "message"=>"email ou mot de passe incorrect"
-            ]);
+
+
+        //step 1
+        $credentials = $request->only(['email', 'password']);
+        try {
+            if (auth()->guard('api')->attempt($credentials)){
+                //token
+
+                $token = null;
+
+                if (!$token = auth()->guard('api')->attempt($credentials)){
+                    return response()->json([
+                        "status"=>false,
+                        "message"=>"email ou mot de passe incorrect"
+                    ]);
+                }
+
+                return response()->json([
+                    "status"=>true,
+                    "token"=>$token
+                ]);
+            }
+        }catch(\Exception $ex){
+            return ($ex);
         }
-        return response()->json([
-            "status"=>true,
-            "token"=>$token
-        ]);
+
+
     }
 
     public function register(Request $request){

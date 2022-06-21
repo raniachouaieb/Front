@@ -32,6 +32,7 @@ class ConvocationController extends Controller
 
         }])->where('parent_id', Auth::guard('api')->user()->id)->where('class_id' ,'!=',null)->get();
 
+
         $countTotal=[];
         foreach ($eleves as $eleve) {
 
@@ -41,7 +42,8 @@ class ConvocationController extends Controller
         }
         return response()->json([
             "status"=>true,
-            "data"=> $eleves,$countTotal
+            "data"=> $eleves,
+            "count"=>$countTotal
 
 
         ]);
