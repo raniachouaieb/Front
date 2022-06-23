@@ -1,5 +1,17 @@
 @extends('layouts.profile')
 @section('content')
+    <style>
+        .cardname{
+            margin-bottom: 15px;
+            border-color: #cdcdcd;
+            border-width: 1px;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 75%;
+            margin-top: 5px;
+            padding-bottom: 10px; justify-content: center; align-items: center;
+        }
+    </style>
 
     <div class="container">
         <form method="post" action="{{route('updateImageParent', Auth::guard('parente')->user()->id)}}" enctype="multipart/form-data">
@@ -15,7 +27,7 @@
 
                 </div>
                 <br>
-                <div>
+                <div class="cardname">
                     <label> <i class="fa-solid fa-user"></i> {{Auth::guard('parente')->user()->nomPere  }} {{Auth::guard('parente')->user()->prenomnomPere}}</label>
                 </div>
                 <div>

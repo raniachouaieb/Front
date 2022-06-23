@@ -63,7 +63,7 @@ Route::group(['namespace'=>'Front'],function(){
 
 
 
-    Route::post('save-token', 'ParentController@saveToken')->name('save-token');
+//    Route::post('save-token', 'ParentController@saveToken')->name('save-token');
 
-
+    Route::get('/saveTokenN','ParentController@saveToken')->name('save-token');
 });

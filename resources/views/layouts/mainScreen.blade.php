@@ -46,6 +46,65 @@
         <div class="circle3"></div>
     </div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBqDXA5OPm_rY87OYWj6uoyGMTsDX9LBbQ",
+        authDomain: "schoolapp-c3163.firebaseapp.com",
+        projectId: "schoolapp-c3163",
+        storageBucket: "schoolapp-c3163.appspot.com",
+        messagingSenderId: "810121300083",
+        appId: "1:810121300083:web:90550d5b78ab2bf4c54206",
+        measurementId: "G-V5P1TB8637"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+    var   fcmToken  = null;
+    // Request permission for push notifications.
+    messaging.requestPermission()
+        .then(() => {
+            log('Have permission to send push notifications');
+            return messaging.getToken();
+        })
+        .then(token => {
+            fcmToken = token;
+
+            $.ajax({
+            // / the route pointing to the post function /
+            url: '/saveTokenN',
+                type: 'get',
+                // / send the csrf-token and the input to the controller /
+            data: {_token:'TBywTzanzjqRDqXiRn0mjBFiPRCovOGB9zek8Pza',fcmToken:token},
+            dataType: 'JSON',
+                // / remind that 'data' is the response of the AjaxController /
+            success: function (data) {
+            }
+        });
+            log(`Received FCM token: ${token}`);
+        })
+        .catch(err => {
+            log(err);
+        });
+    // Handle incoming messages.
+    messaging.onMessage(payload => {
+        log(`Received push notification: ${JSON.stringify(payload)}`);
+        const { body, title } = payload.notification;
+        toastr.info(body, title);
+    });
+    // Simple logging to page element.
+    const $log = $('#log');
+    function log(message) {
+        console.log(`<br/>${message}`);
+    }
+
+</script>
 
 <!-- Swiper JS -->
 <script src="{{asset('assets/front/js/swiper.min.js')}}"></script>
@@ -61,6 +120,8 @@
 <!-- Turbo slider plugin file. requared only wizard pages -->
 <script src="{{asset('assets/front/js/turbo-slider/turbo.min.js')}}"></script>
 <script src="{{asset('assets/front/js/turbo-ini.js')}}"></script>
+
+
 
 </body>
 

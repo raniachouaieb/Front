@@ -48,6 +48,7 @@ class ParentController extends Controller
         if($request->hasfile('image_profile')){
 
             $path = uploadImage('parents',$request->file('image_profile'));
+            //dd($path);
             if(File::exists($path))
             {
                 File::delete($path);

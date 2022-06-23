@@ -51,11 +51,11 @@ class ParentController extends Controller
     public function contact(){
         return view('front.contact');
     }
-    public function saveToken(Request $request)
-    {
-        Auth::guard('parente')->user()->update(['web_token'=>$request->token]);
-        return response()->json(['token saved successfully.']);
-    }
+//    public function saveToken(Request $request)
+//    {
+//        Auth::guard('parente')->user()->update(['web_token'=>$request->token]);
+//        return response()->json(['token saved successfully.']);
+//    }
 
     public function sendMessage(Request $request){
         //return ($request->bakkaya);
@@ -167,4 +167,18 @@ class ParentController extends Controller
             return redirect()->route('mainScreen')->with(['success'=>'modification avec succés']);
 
         }
+    public function saveToken(Request $request){
+//        $y=Auth()->user()->id;
+        $y = Auth::guard('parente')->user()->id;
+       // dd($y);
+
+        $user=Parente::find($y);
+dd($request->token);
+        $user->web_token=$request->token;
+
+        //  $user->web_token=csrf_token();
+        //dd(csrf_token());
+        $user->update();
+        return response()->json(['Token saved with success .']);
+    }
 }

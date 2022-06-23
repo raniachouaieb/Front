@@ -130,13 +130,12 @@
         const messaging = firebase.messaging();
 
         function initFirebaseMessagingRegistration() {
-            messaging
-                .requestPermission()
+             messaging.requestPermission()
                 .then(function () {
                     return messaging.getToken()
                 })
                 .then(function(token) {
-                    console.log(token);
+                    console.log('token',token);
 
                     $.ajaxSetup({
                         headers: {

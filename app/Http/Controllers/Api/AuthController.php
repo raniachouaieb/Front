@@ -9,6 +9,7 @@ use App\Http\Requests\ParentRequest;
 use App\Models\Parente;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -21,14 +22,12 @@ class AuthController
     }
 
     public function login(LoginRequestApi  $request){
-
-
-
         //step 1
         $credentials = $request->only(['email', 'password']);
         try {
             if (auth()->guard('api')->attempt($credentials)){
                 //token
+                $user = Auth::guard('api')->user()->id;
 
                 $token = null;
 
@@ -41,7 +40,8 @@ class AuthController
 
                 return response()->json([
                     "status"=>true,
-                    "token"=>$token
+                    "token"=>$token,
+                    "user"=>$user
                 ]);
             }
         }catch(\Exception $ex){

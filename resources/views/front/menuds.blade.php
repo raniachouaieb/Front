@@ -20,6 +20,16 @@
 
 <body>
 <style>
+    .cardDateLeftBottom{
+        position: absolute;
+        bottom: 41px;
+        background-color: #3baa6d;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        left: 69%;
+    }
     .fda_food_row > .col-9
     {
         max-width: 245px;
@@ -157,20 +167,37 @@
 
         <div>
             <div class="section-head">
-                <h4 class="title-main" style="margin-top: 25px; margin-left: 135px;">Menu de la semaine</h4>
+                <h4 class="title-main" >Menu de la semaine</h4>
             </div>
+
             @foreach($menu as $menuds)
-            <section id="fda_product_tile" class="col-md-12">
-                <div class="row fda_food_row">
-                    <div class="col-md-9">
-                        <div class="food_tile active" style="width: 221%;padding: 2%;margin-left: -38%;">
-                            <img src="http://127.0.0.1:8100/assets/{{$menuds->image}}" alt="" class="fda_product_img">
-                            <span class="food_name"> {{$menuds->jour}} {{$menuds->date}}</span>
-                            <span class="food_detail">{!! $menuds->menu !!}</span>
-                        </div>
+                <div class="card" style="width: 95%;background-color: white;margin: 11px;box-shadow: 0px 0px 3px 1px;border-top-left-radius:15px; border-top-right-radius:15px;">
+                      <img style=" width: 100%;height:190px; border-top-left-radius:15px; border-top-right-radius:15px;" src="http://127.0.0.1:8080/assets/{{$menuds->image}}" alt="" class="fda_product_img">
+                    <div class="card-body">
+                        <label class="card-title" style="margin-left: 5px; color: #0f4198"><strong>{{$menuds->jour}}</strong> </label>
+                        <label class="card-text" style="margin-left: 5px;">{!! $menuds->menu !!}</label>
+                        <p style=" position: absolute;
+        bottom: 41px;
+        background-color: #3baa6d;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        left: 69%;" >{{$menuds->date}}</p>
                     </div>
-                 </div>
-            </section>
+                </div>
+
+{{--            <section id="fda_product_tile" class="col-md-12">--}}
+{{--                <div class="row fda_food_row">--}}
+{{--                    <div class="col-md-9">--}}
+{{--                        <div class="food_tile active" style="width: 221%;padding: 2%;margin-left: -38%;">--}}
+{{--                            <img src="http://127.0.0.1:8100/assets/{{$menuds->image}}" alt="" class="fda_product_img">--}}
+{{--                            <span class="food_name"> {{$menuds->jour}} {{$menuds->date}}</span>--}}
+{{--                            <span class="food_detail">{!! $menuds->menu !!}</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                 </div>--}}
+{{--            </section>--}}
             @endforeach
         </div>
      </div>
