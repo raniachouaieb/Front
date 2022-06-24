@@ -22,8 +22,9 @@ class LoginController extends Controller
     public function login(LoginRequest  $request)
     {
         if (Auth::guard('parente')->attempt(['email' => $request->email, 'password' => $request->password])) {
-
             if(Auth::guard('parente')->user()->email_verified_at != Null && Auth::guard('parente')->user()->is_active==1){
+
+
                 Session::flash('statuscode', 'success');
                 return redirect()->route('mainScreen')->with('status', 'Bienvenue! ');
             }

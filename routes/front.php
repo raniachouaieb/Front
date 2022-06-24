@@ -21,7 +21,7 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('resetPass/{token}', 'ForgotPassController@resetPass')->name('resetPass');
     Route::post('resetPass', 'ForgotPassController@submitResetPasswordForm')->name('submitResetPasswordForm');
 
-
+    Route::post('editVerified', 'ParentController@editVerified')->name('editVerified');
 });
 Route::group(['namespace'=>'Front'],function(){
     Route::get('Home', 'ParentController@index')->name('Home');
@@ -35,6 +35,7 @@ Route::group(['namespace'=>'Front'],function(){
     Route::get('ComplementInfo', 'ParentController@ComplementInfo')->name('ComplementInfo');
     Route::post('updateAll/{id}', 'ParentController@updateAll')->name('updateAll');
     Route::post('updateElev/{id}', 'ParentController@updateElev')->name('updateElev');
+    Route::get('complementEnfant/{id}', 'ParentController@complementEnfant')->name('complementEnfant');
 
     Route::get('task', 'TravailController@task')->name('task');
     Route::get('listTask/{id}', 'TravailController@listTask')->name('listTask');

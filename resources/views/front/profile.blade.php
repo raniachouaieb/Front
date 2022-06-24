@@ -1,16 +1,7 @@
 @extends('layouts.profile')
 @section('content')
     <style>
-        .cardname{
-            margin-bottom: 15px;
-            border-color: #cdcdcd;
-            border-width: 1px;
-            border-radius: 6px;
-            background-color: rgba(255, 255, 255, 0.7);
-            width: 75%;
-            margin-top: 5px;
-            padding-bottom: 10px; justify-content: center; align-items: center;
-        }
+
     </style>
 
     <div class="container">
@@ -27,8 +18,12 @@
 
                 </div>
                 <br>
-                <div class="cardname">
-                    <label> <i class="fa-solid fa-user"></i> {{Auth::guard('parente')->user()->nomPere  }} {{Auth::guard('parente')->user()->prenomnomPere}}</label>
+                <div style="border: 1px solid #969696;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 5px;">
+                <div >
+                    <label>   {{Auth::guard('parente')->user()->nomPere  }} {{Auth::guard('parente')->user()->prenomPere}}</label>
                 </div>
                 <div>
                     <label><i class="fa-solid fa-envelope"></i> {{Auth::guard('parente')->user()->email  }}</label>
@@ -37,75 +32,52 @@
                         <label><i class="fa-solid fa-phone"></i> {{Auth::guard('parente')->user()->telPere  }}</label>
 
                 </div>
+                </div>
 
+                <div class="section-head">
+
+                    <button type="submit" class="button circle block orange" style="margin-top: -54px;width: 60%;margin-left: 20%;">Modifier Image</button>
+                </div>
 
             </div>
+            @foreach($enfant as $enf)
+
+            <div class="body-student profile-image">
+                @if($enf->image == null)
+                    @if($enf->gender == 0 )
+                        <img class="avatar-img" alt="User Avatar" src="{{asset('assets/uploads/enfants/garcon.jpg')}}" alt="Person"  onclick="clickImageEnf()" id="profileDisplayEnf"  width="100" height="100" style="border-radius: 50%"/>
+
+                    @else
+                        <img class="avatar-img" alt="User Avatar" src="{{asset('assets/uploads/enfants/fille.png')}}" alt="Person"  onclick="clickImageEnf()" id="profileDisplayEnf"  width="100" height="100" style="border-radius: 50%"/>
+                    @endif
+                @else
+                    <img class="avatar-img" alt="User Avatar" src="{{asset('assets/'.$enf->image)}}" alt="Person"  onclick="clickImageEnf()" id="profileDisplayEnf"  width="100" height="100" style="border-radius: 50%"/>
+
+                @endif
+                <form action="{{route('updateImageEnfant', $enf->id)}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <a href="javascript:void(0);" class="update-btn"><i class="fa fa-camera" onclick="clickImageEnf()" ></i></a>
+                    <input type="file" name="image" id="imageProfileEnf" onchange="loadFileEnf(event)" style="display: none;">
+                    <div>
+                        <label style="margin-top: 15px"> {{$enf->nomEleve }} {{$enf->prenomEleve }}</label>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="button circle block orange">Modifier</button>
+                    </div>
+
+                </form>
+            </div>
+            @endforeach
+
 
         </div>
-            <div class="section-head">
 
-            <button type="submit" class="button circle block orange" style="margin-top: -130px;width: 60%;margin-left: 20%;">Modifier Image</button>
-            </div>
+
         </form>
 
-        <section class="container">
-            <div class="section-head" style="margin-top: -11px">
-                <h4 class="title-main">Enfants</h4>
-            </div>
-
-                <div class="row">
-                     @foreach($enfant as $enf)
-                    <div class="col-2">
-                        <div class="profile-bg">
-                             <div class="form-divider"></div>
-                            <div class="form txt-center" style="padding: 25px;">
-                                  <div class="profile-image">
-                                @if($enf->image == null)
-                                    @if($enf->gender == 0 )
-                                        <img class="avatar-img" alt="User Avatar" src="{{asset('assets/uploads/enfants/garcon.jpg')}}" alt="Person"  onclick="clickImage()" id="profileDisplayEnf"  width="100" height="100" style="border-radius: 50%"/>
-
-                                    @else
-                                        <img class="avatar-img" alt="User Avatar" src="{{asset('assets/uploads/enfants/fille.png')}}" alt="Person"  onclick="clickImage()" id="profileDisplayEnf"  width="100" height="100" style="border-radius: 50%"/>
-                                    @endif
-                                      @else
-                                          <img class="avatar-img" alt="User Avatar" src="{{asset('assets/'.$enf->image)}}" alt="Person"  onclick="clickImage()" id="profileDisplayEnf"  width="100" height="100" style="border-radius: 50%"/>
-
-                                      @endif
-                                    <form action="{{route('updateImageEnfant', $enf->id)}}" method="post" enctype="multipart/form-data">
-                                        @csrf
-                                          <a href="javascript:void(0);" class="update-btn"><i class="fa fa-camera" onclick="clickImage()" ></i></a>
-                                        <input type="file" name="image" id="imageProfileEnf" onchange="loadFile(event)" style="display: none;">
-                                        <div>
-                                            <label style="margin-top: 15px"> {{$enf->nomEleve }} {{$enf->prenomEleve }}</label>
-                                        </div>
-                                        <div class="form-row">
-                                            <button type="submit" class="button circle block orange">Modifier</button>
-                                        </div>
-
-                                    </form>
-                                 </div>
 
 
 
-                             </div>
-
-
-
-                         </div>
-                    </div>
-                   @endforeach
-
-                 </div>
-
-
-                <div class="form-divider"></div>
-
-
-        </section>
-
-
-
-        <div class="form-divider"></div>
 
 
      </div>
@@ -120,10 +92,10 @@
         };
     </script>
     <script>
-        function clickImage(){
+        function clickImageEnf(){
             document.querySelector('#imageProfileEnf').click();
         }
-        var loadFile = function(event){
+        var loadFileEnf = function(event){
             var profileDisplay = document.getElementById('profileDisplayEnf');
             profileDisplay.src = URL.createObjectURL(event.target.files[0]);
         };

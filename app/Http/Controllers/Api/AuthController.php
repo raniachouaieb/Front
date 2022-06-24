@@ -27,8 +27,10 @@ class AuthController
         try {
             if (auth()->guard('api')->attempt($credentials)){
                 //token
-                $user = Auth::guard('api')->user()->id;
-
+                $user = Auth::guard('api')->user();
+                $user->device_token=$request->device_token;
+                $id = $user->id;
+                $user->update();
                 $token = null;
 
                 if (!$token = auth()->guard('api')->attempt($credentials)){
@@ -41,7 +43,7 @@ class AuthController
                 return response()->json([
                     "status"=>true,
                     "token"=>$token,
-                    "user"=>$user
+                    "user"=>$id
                 ]);
             }
         }catch(\Exception $ex){

@@ -152,7 +152,7 @@ class ParentController extends Controller
             $parent->email=$request->email;
             $parent->update();
 
-            return redirect()->route('mainScreen')->with(['success'=>'modification avec succés']);
+            return view('front.infoEleve',compact('parent'));
 
         }
 
@@ -167,6 +167,12 @@ class ParentController extends Controller
             return redirect()->route('mainScreen')->with(['success'=>'modification avec succés']);
 
         }
+
+        public function editVerified(){
+        $user=Auth::user();
+        return $user->markEmailAsVerified();
+        }
+
     public function saveToken(Request $request){
 
         $y = Auth::guard('parente')->user()->id;

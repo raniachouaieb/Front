@@ -7,6 +7,28 @@
 <body>
 <style>
     span{ color: #019723; font-size: 18px;}
+    .stepwizard {
+        display: table;
+        width: 100%;
+        position: relative;
+    }
+    .stepwizard-row {
+        display: table-row;
+    }
+    .stepwizard-step {
+        display: table-cell;
+        text-align: center;
+        position: relative;
+    }
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+    }
 
 </style>
 <div class="wrapper">
@@ -32,31 +54,54 @@
 
             <form method="post" action="{{route('updateAll', Auth::guard('parente')->user()->id)}}">
                 @csrf
-<div class="card" style="margin-bottom: 10px">
-<div class="row">
-    <div class="col-4">
-        <div style="border:10px; color:red;  background-color:#fff; width:20px; text-align:center;">
-            <label>1</label>
-        </div>
-        Informations
-    </div>
-    <div class="col-4">
-    <div style="text-align: center; border-radius:5px">
-        <label>2</label>
-    </div>
+{{--<div class="card" style="margin-bottom: 10px">--}}
+{{--<div class="row">--}}
+{{--    <div class="col-4">--}}
+{{--        <div style="border:10px; color:red;  background-color:#fff; width:20px; text-align:center;">--}}
+{{--            <label>1</label>--}}
+{{--        </div>--}}
+{{--        Informations--}}
+{{--    </div>--}}
+{{--    <div class="col-4">--}}
+{{--    <div style="text-align: center; border-radius:5px">--}}
+{{--        <label>2</label>--}}
+{{--    </div>--}}
 
-    <label style="text-align: center">Enfants</label>
-    </div>
-    <div class="col-4">
-    <div style="text-align: center">
-        <label>3</label>
-    </div>
-    <label style="text-align: center">Terminé</label>
-    </div>
-</div>
-</div>
+{{--    <label style="text-align: center">Enfants</label>--}}
+{{--    </div>--}}
+{{--    <div class="col-4">--}}
+{{--    <div style="text-align: center">--}}
+{{--        <label>3</label>--}}
+{{--    </div>--}}
+{{--    <label style="text-align: center">Terminé</label>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--</div>--}}
 
-                <div class="form-row-group with-icons">
+
+                <div class="form-row-group with-icons" style="background: #fff;
+    padding: 15px 12px;
+    border-radius: 10px;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 2px 2px 0 transparent, 0 1px 5px 0 rgb(0 0 0 / 24%), 0 3px 1px -2px transparent;" >
+                    <div class="stepwizard">
+                        <div class="stepwizard-row setup-panel">
+                            <div class="stepwizard-step col-xs-4">
+                                <a href="#step-1" type="button"
+                                   class="btn btn-success {{ $errors->has('user.*') ? 'btn-danger' :'' }} btn-circle">1</a>
+                                <p><small>Informations</small></p>
+                            </div>
+                            <div class="stepwizard-step col-xs-4">
+                                <a href="#step-2" type="button"
+                                   class="btn btn-default {{ $errors->has('students.*') ? 'btn-danger' :'' }} btn-circle" {{ old('students') ? '' :'disabled="disabled"' }}>2</a>
+                                <p><small>Les enfants</small></p>
+                            </div>
+                            <div class="stepwizard-step col-xs-4">
+                                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                                <p><small>Terminer</small></p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-divider"></div>
                     <div class="form-label-divider"><span>1-Papa</span></div>
                     <div class="form-divider"></div>
@@ -129,39 +174,16 @@
                 <div class="form-divider"></div>
 
                 <div class="form-row">
-                    <button type="submit" class="button circle block orange" style=" width: 100%;">Enregistrer</button>
+                    <button type="submit" class="button circle block orange" style=" width: 100%;">Suivant</button>
                 </div>
 
                 <div class="form-divider"></div>
             </form>
 
 
-                <div class="form-divider"></div>
-                <div class="form-label-divider"><span>Enfant(s)</span></div>
-                <div class="form-divider"></div>
 
-                <div class="row">
-                    @foreach($enfant as $enf)
-                        <div class="col-6">
 
-                                        <form action="{{route('updateElev', $enf->id)}}" method="post" >
-                                            @csrf
 
-                                            <div>
-                                                <input type="text" name="nomEleve" class="form-element" placeholder="" value="{{$enf->nomEleve }}">
-                                                <input type="text" name="prenomEleve" class="form-element" placeholder="" value="{{$enf->prenomEleve }}">
-
-                                            </div>
-                                            <div class="form-row">
-                                                <button type="submit" class="button circle block orange">Modifier</button>
-                                            </div>
-
-                                        </form>
-
-                        </div>
-                    @endforeach
-
-                </div>
             </section>
         </main>
         <!-- Page content end -->

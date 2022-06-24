@@ -46,23 +46,23 @@
         <div class="circle3"></div>
     </div>
 </div>
-<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+{{--<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase-app.js"></script>--}}
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
 <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     var firebaseConfig = {
-        apiKey: "AIzaSyBqDXA5OPm_rY87OYWj6uoyGMTsDX9LBbQ",
-        authDomain: "schoolapp-c3163.firebaseapp.com",
-        projectId: "schoolapp-c3163",
-        storageBucket: "schoolapp-c3163.appspot.com",
-        messagingSenderId: "810121300083",
-        appId: "1:810121300083:web:90550d5b78ab2bf4c54206",
-        measurementId: "G-V5P1TB8637"
+        apiKey: "AIzaSyCpIMJPoMWl432aIGi8caKNW9tlXvDLbes",
+        authDomain: "front-2f5dd.firebaseapp.com",
+        projectId: "front-2f5dd",
+        storageBucket: "front-2f5dd.appspot.com",
+        messagingSenderId: "468846320279",
+        appId: "1:468846320279:web:b8ab6be4de447f7b8ba7d2",
+        measurementId: "G-SX1ZG09079"
     };
     firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
@@ -71,9 +71,9 @@
     // Request permission for push notifications.
     messaging.requestPermission()
         .then(() => {
-            log('Have permission to send push notifications');
+            log('Have permisson to send notification');
             return messaging.getToken();
-            console.log('111111bbb',messaging.getToken());
+
         })
         .then(token => {
             fcmToken = token;
@@ -97,6 +97,7 @@ console.log('fcmToken',fcmToken)
         });
     // Handle incoming messages.
     messaging.onMessage(payload => {
+        console.log('payload',payload);
         log(`Received push notification: ${JSON.stringify(payload)}`);
         const { body, title } = payload.notification;
         toastr.info(body, title);
