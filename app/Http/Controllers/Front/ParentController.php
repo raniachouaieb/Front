@@ -168,17 +168,14 @@ class ParentController extends Controller
 
         }
     public function saveToken(Request $request){
-//        $y=Auth()->user()->id;
+
         $y = Auth::guard('parente')->user()->id;
-       // dd($y);
 
         $user=Parente::find($y);
-dd($request->token);
-        $user->web_token=$request->token;
 
-        //  $user->web_token=csrf_token();
-        //dd(csrf_token());
+        $user->web_token=$request->get('fcmToken');
+
         $user->update();
-        return response()->json(['Token saved with success .']);
+        return response()->json(['Token saved with success .',$request->get('fcmToken')]);
     }
 }

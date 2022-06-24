@@ -66,16 +66,18 @@
     };
     firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
+    console.log('111111');
     var   fcmToken  = null;
     // Request permission for push notifications.
     messaging.requestPermission()
         .then(() => {
             log('Have permission to send push notifications');
             return messaging.getToken();
+            console.log('111111bbb',messaging.getToken());
         })
         .then(token => {
             fcmToken = token;
-
+console.log('fcmToken',fcmToken)
             $.ajax({
             // / the route pointing to the post function /
             url: '/saveTokenN',
@@ -85,6 +87,7 @@
             dataType: 'JSON',
                 // / remind that 'data' is the response of the AjaxController /
             success: function (data) {
+                console.log('data',data);
             }
         });
             log(`Received FCM token: ${token}`);
@@ -103,7 +106,6 @@
     function log(message) {
         console.log(`<br/>${message}`);
     }
-
 </script>
 
 <!-- Swiper JS -->
