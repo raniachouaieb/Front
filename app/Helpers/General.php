@@ -6,3 +6,4 @@ function uploadImage($folder, $image){
     return $path;
 
 }
+?>
